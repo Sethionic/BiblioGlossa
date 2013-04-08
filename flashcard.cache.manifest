@@ -1,0 +1,23 @@
+CACHE MANIFEST
+# rev 0.7.2
+images/background.png
+images/buttons.png
+js/card.js
+Chalkduster.ttf
+images/close.png
+js/controller.js
+js/deck.js
+js/deckmgr.js
+images/icon16.png
+images/icon48.png
+images/icon57.png
+images/icon128.png
+index.html
+stylesheets/iphone.css
+stylesheets/fcardmain.css
+images/settings.png
+images/next.png
+images/prev.png
+js/modernizr.js
+js/jquery.min.js
+js/jquery-ui.min.js
