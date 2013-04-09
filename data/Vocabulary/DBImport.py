@@ -7,7 +7,7 @@ from collections import defaultdict as dd #Allow dynamic dictionary assignments
 
 
 DBPath='../Data.db' #Path to database file to manipulate
-FilePath='VocabularyTable.csv' #Path to CSV file to import
+FilePath='Lexicon.csv' #Path to CSV file to import
 TableName='Vocab' #Table Name within specified database
 #This was a shortcut used for testing to avoid typing the data types each time
 GivenTypes=['SMALLINT','VARCHAR(1)','VARCHAR(20)','VARCHAR(20)','VARCHAR(50)',\

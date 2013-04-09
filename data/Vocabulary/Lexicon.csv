@@ -1,0 +1,453 @@
+Key,POS,DictForm,Transliteration,Translation,SpecialTags,LinkedTo,Mnemonic,Chapter,DifficultyPreset,Type,Subtype,Case_,Number,Gender,Person,Tense,Voice,Mood
+1,V,αγω,ago,I lead,,0,agent,3,0,ω,,None,1,None,1,P,A,I
+2,V,ακουω,akouo,I hear,,0,acoustics,3,0,ω,,None,1,None,1,P,A,I
+3,V,βαπτιζω,baptidzo,I baptize,,0,baptism,3,0,ω,,None,1,None,1,P,A,I
+4,V,βλεπω,blepo,I see,,0,0,3,0,ω,,None,1,None,1,P,A,I
+5,V,γραφω,grapho,I write,,0,graphics,3,0,ω,,None,1,None,1,P,A,I
+6,V,διδασκω,didasko,I teach,,0,didactic,3,0,ω,,None,1,None,1,P,A,I
+7,V,δοξαζω,doxadzo,I glorify,,0,doxology,3,0,ω,,None,1,None,1,P,A,I
+8,V,ἐτοιμαζω,hetoimadzo,I prepare,,0,0,3,0,ω,,None,1,None,1,P,A,I
+9,V,εχω,echo,I have,,0,hectic;habitual,3,0,ω,,None,1,None,1,P,A,I
+10,V,θεραπευω,therapeuo,I heal,,0,therapy,3,0,ω,,None,1,None,1,P,A,I
+11,V,κηρυσσω,kerusso,I preach,,0,kerygma,3,0,ω,,None,1,None,1,P,A,I
+12,V,λυω,luo,I loose,,0,analysis,3,0,ω,,None,1,None,1,P,A,I
+13,V,πειθω,peitho,I trust,,0,0,3,0,ω,,None,1,None,1,P,A,I
+14,V,πεμπω,pempo,I send,,0,pomp,3,0,ω,,None,1,None,1,P,A,I
+15,V,πιστευω,pisteuo,I believe,,0,0,3,0,ω,,None,1,None,1,P,A,I
+16,V,σωζω,sodzo,I save,,0,soteriology,3,0,ω,,None,1,None,1,P,A,I
+17,V,αξω,axo,I will lead,,1,agent,3,0,ω,,None,1,None,1,F,A,I
+18,V,ακουσω,akouso,I will hear,,2,acoustics,3,0,ω,,None,1,None,1,F,A,I
+19,V,βαπτισω,baptiso,I will baptize,,3,baptism,3,0,ω,,None,1,None,1,F,A,I
+20,V,βλεψω,blepso,I will see,,4,0,3,0,ω,,None,1,None,1,F,A,I
+21,V,γραψω,grapso,I will write,,5,graphics,3,0,ω,,None,1,None,1,F,A,I
+22,V,διδαξω,didaxo,I will teach,,6,didactic,3,0,ω,,None,1,None,1,F,A,I
+23,V,δοξασο,doxaso,I will glorify,,7,doxology,3,0,ω,,None,1,None,1,F,A,I
+24,V,ἐτοιμασω,hetoimaso,I will prepare,,8,0,3,0,ω,,None,1,None,1,F,A,I
+25,V,ἐξω,hexo,I will have,,9,hectic;habitual,3,0,ω,,None,1,None,1,F,A,I
+26,V,θεραπευσω,therapeuso,I will heal,,10,therapy,3,0,ω,,None,1,None,1,F,A,I
+27,V,κηρυξω,keruxo,I will preach,,11,kerygma,3,0,ω,,None,1,None,1,F,A,I
+28,V,λυσω,luso,I will loose,,12,analysis,3,0,ω,,None,1,None,1,F,A,I
+29,V,πεισω,peiso,I will trust,,13,0,3,0,ω,,None,1,None,1,F,A,I
+30,V,πεμψω,pempso,I will send,,14,pomp,3,0,ω,,None,1,None,1,F,A,I
+31,V,πιστευσω,pisteuso,I will believe,,15,0,3,0,ω,,None,1,None,1,F,A,I
+32,V,σωσω,soso,I will save,,16,soteriology,3,0,ω,,None,1,None,1,F,A,I
+33,V,ειμι,eimi,I am,Irregular,0,(root εσ; is),3,0,μι,,None,1,None,1,P,A,I
+34,B,μη,me,not,,0,0,3,0,N,,,,0,,,,!I
+35,B,ου,ou,not,,34,0,3,0,N,,,,0,,,,I
+36,N,αγγελος,angelos,Angel; Messenger,,0,angelic,4,0,2,1,N,1,M,,,,
+37,N,αγρος,agros,field,,0,agrarian,4,0,2,1,N,1,M,,,,
+38,N,αδελφος,adelphos,brother; fellow believer,,0,Philadelphia,4,0,2,1,N,1,M,,,,
+39,N,ἀμαρτωλος,hamartolos,sinner,,0,hamartiology,4,0,2,1,N,1,M,,,,
+40,N,ανθρωπος,anthropos,man; person,,0,anthropology,4,0,2,1,N,1,M,,,,
+41,N,αποστολος,apostolos,apostle; messenger,,0,apostolic,4,0,2,1,N,1,M,,,,
+42,N,διακονος,diakonos,minister,,0,deacon,4,0,2,1,N,1,M,,,,
+43,N,δουλος,doulos,servant; slave,,0,0,4,0,2,1,N,1,M,,,,
+44,N,θανατος,thanatos,death,,0,euthanasia,4,0,2,1,N,1,M,,,,
+45,N,θεος,theos,God,,0,theology,4,0,2,1,N,1,M,,,,
+46,N,Ἰησους,Hiesous,Jesus,,0,-,4,0,2,1,N,1,M,,,,
+47,N,κοσμος,kosmos,world,,0,cosmic,4,0,2,1,N,1,M,,,,
+48,N,κυριος,kurios,Lord; master,,0,0,4,0,2,1,N,1,M,,,,
+49,N,λιθος,lithos,stone,,0,lithosphere,4,0,2,1,N,1,M,,,,
+50,N,λογος,logos,word; message,,0,logical,4,0,2,1,N,1,M,,,,
+51,N,νομας,nomos,law,,0,antinomian,4,0,2,1,N,1,M,,,,
+52,N,οικος,oikos,house; household,,0,economy,4,0,2,1,N,1,M,,,,
+53,N,οχλος,ochlos,crowd,,0,ochlocracy,4,0,2,1,N,1,M,,,,
+54,N,υἱος,huios,son,,0,0,4,0,2,1,N,1,M,,,,
+55,N,Χριστος,Christos,Christ,,0,-,4,0,2,1,N,1,M,,,,
+56,N,δωρον,doron,gift,,0,donate,4,0,2,1,N,1,N,,,,
+57,N,εργον,ergon,work,,0,erg;energy,4,0,2,1,N,1,N,,,,
+58,N,ευαγγελιον,euangelion,gospel,,0,evangelical,4,0,2,1,N,1,N,,,,
+59,N,ἱερον,hieron,temple,,0,hierarchy,4,0,2,1,N,1,N,,,,
+60,N,τεκνον,teknon,child,,0,0,4,0,2,1,N,1,N,,,,
+61,N,ερημος,eremos,wilderness; desert,,0,hermit,4,0,2,3,N,1,F,,,,
+62,N,οδος,odos,road; way,,0,odometer,4,0,2,3,None,1,F,,,,
+63,V,γινωσκω,ginosko,I know,,0,gnostic,4,0,ω,,None,,0,,,,
+64,V,λαμβανω,lambano,I take; I receive (Labyrinth),,0,0,4,0,ω,,None,,0,,,,
+65,V,λεγω,lego,I say; I speak,,0,legend,4,0,ω,,None,,0,,,,
+66,V,φερω,phero,I bring; I bear,,0,Christopher (“Bearer of Christ”),4,0,ω,,None,,0,,,,
+67,C,αλλα,alla,but,,0,0,4,0,,,,,,,,,
+68,C,δε,de,now; but,,0,0,4,0,,,,,,,,,
+69,C,και,kai,and; also; even,,0,0,4,0,,,,,,,,,
+70,C,και...και,kai...kai,both...and,Sequence,0,0,4,0,,,,,,,,,
+71,N,αληθεια,aletheia,truth,,0,0,5,0,1,1,N,1,F,,,,
+72,N,ἁμαρτια,hamartia,sin,,0,hamartiology,5,0,1,1,N,1,F,,,,
+73,N,βασιλεια,basileia,kingdom; reign,,0,basilica,5,0,1,1,N,1,F,,,,
+74,N,διακονια,diakonia,ministry; service,,0,diaconate,5,0,1,1,N,1,F,,,,
+75,N,εκκλησια,ekklesia,church,,0,ecclesiastical,5,0,1,1,N,1,F,,,,
+76,N,εξουσια,exousia,authority; right,,0,0,5,0,1,1,N,1,F,,,,
+77,N,επιθυμια,epithumia,desire; lust,,0,0,5,0,1,1,N,1,F,,,,
+78,N,ἡμερα,hemera,day,,0,ephemeral,5,0,1,1,N,1,F,,,,
+79,N,καρδια,kardia,heart,,0,cardiac,5,0,1,1,N,1,F,,,,
+80,N,μαρτυρια,marturia,testimony,,0,martyr,5,0,1,1,N,1,F,,,,
+81,N,οικια,oikia,house,,0,0,5,0,1,1,N,1,F,,,,
+82,N,παρρησια,parresia,boldness; confidence,,0,0,5,0,1,1,N,1,F,,,,
+83,N,σοφια,sophia,wisdom,,0,sophisticated,5,0,1,1,N,1,F,,,,
+84,N,σωτηρια,soteria,salvation,,0,soteriology,5,0,1,1,N,1,F,,,,
+85,N,χαρα,chara,joy,,0,Charissa,5,0,1,1,N,1,F,,,,
+86,N,ωρα,ora,hour,,0,0,5,0,1,1,N,1,F,,,,
+87,N,γλωσσα,glossa,tongue; language,,0,glossary,5,0,1,2,N,1,F,,,,
+88,N,δοξα,doxa,glory,,0,doxology,5,0,1,2,N,1,F,,,,
+89,N,θαλασσα,thalassa,sea,,0,thallasic,5,0,1,2,N,1,F,,,,
+90,N,αγαπη,agape,love,,0,0,5,0,1,3,N,1,F,,,,
+91,N,αρχη,arche,beginning,,0,archaic,5,0,1,3,N,1,F,,,,
+92,N,γη,ge,earth; land,,0,geology,5,0,1,3,N,1,F,,,,
+93,N,γραφη,graphe,Scripture; writing,,0,graphics,5,0,1,3,N,1,F,,,,
+94,N,διαθηκη,diatheke,covenant,,0,0,5,0,1,3,N,1,F,,,,
+95,N,διδαχη,didache,teaching,,0,διδασκω,5,0,1,3,N,1,F,,,,
+96,N,δικαιοσυνη,dikaiosune,righteousness,,0,0,5,0,1,3,N,1,F,,,,
+97,N,ειρηνη,eirene,peace,,0,Irene,5,0,1,3,N,1,F,,,,
+98,N,εντολη,entole,commandment,,0,0,5,0,1,3,N,1,F,,,,
+99,N,επιστολη,epistole,letter,,0,epistle,5,0,1,3,N,1,F,,,,
+100,N,ζωη,dzoe,life,,0,zoology,5,0,1,3,N,1,F,,,,
+101,N,κεφαλη,kephale,head,,0,encephalitis,5,0,1,3,N,1,F,,,,
+102,N,οργη,orge,anger; wrath,,0,0,5,0,1,3,N,1,F,,,,
+103,N,παραβολη,parabole,parable,,0,parabolic,5,0,1,3,N,1,F,,,,
+104,N,περιτομη,peritome,circumcision,,0,0,5,0,1,3,N,1,F,,,,
+105,N,προσευχη,proseuche,prayer,,0,0,5,0,1,3,N,1,F,,,,
+106,N,συναγωγη,sunagoge,synagogue,,0,0,5,0,1,3,N,1,F,,,,
+107,N,ὑπομονη,hupomone,endurance; steadfastness,,0,0,5,0,1,3,N,1,F,,,,
+108,N,φωνη,phone,voice; sound,,0,telephone,5,0,1,3,N,1,F,,,,
+109,N,ψυχη,phuche,soul; life,,0,psychology,5,0,1,3,N,1,F,,,,
+110,N,μαθητἡ,mathetes,disciple,,0,mathematics,5,0,1,1,N,1,M,,,,
+111,N,προφητἡ,prophetes,prophet,,0,prophetic,5,0,1,1,N,1,M,,,,
+112,N,στρατιωτἡ,stratiotes,soldier,,0,strategic,5,0,1,1,N,1,M,,,,
+113,N,τελωνἡ,telones,tax collector,,0,0,5,0,1,1,N,1,M,,,,
+114,N,ὑποκριτἡ,hupokrites,hypocrite,,0,hypocritical,5,0,1,1,N,1,M,,,,
+115,N,Μεσσιας,Messias,Messiah,,0,Messianic,5,0,1,2,N,1,M,,,,
+116,N,νεανιας,neanias,young man,,0,"(From νεος [""new""])",5,0,1,2,N,1,M,,,,
+117,T,ὁ;ἡ;τὁ,ho;he;to,the,,0,0,5,0,,,,,,,,,
+118,P,ἀπό,apo,from;; away from; of (with gen),,0,apostacy,5,0,,,,,,,,,
+119,P,εἰς,eis,into;; to; for; in (with acc),,0,esoteric,5,0,,,,,,,,,
+120,P,ἐκ,ek,out of;; from; by (with gen),,0,eccentric,5,0,,,,,,,,,
+121,P,ἐν,en,in;; within; by; with; among (with dat),,0,energy,5,0,,,,,,,,,
+122,A,αγαθος,agathos,good,,0,Agatha,6,0,C,1,N,1,M,,,,
+123,A,αγαπητος,agapetos,beloved,,0,agape,6,0,C,1,N,1,M,,,,
+124,A,αλλος,allos,other,Irregular,0,0,6,0,C,1,N,1,M,,,,
+125,A,δυνατος,dunatos,powerful; possible,,0,dynamic,6,0,C,1,N,1,M,,,,
+126,A,ἓκαστος,hekastos,each; every,,0,0,6,0,C,1,N,1,M,,,,
+127,A,εσχατος,eschatos,last,,0,eschatology,6,0,C,1,N,1,M,,,,
+128,A,καινος,kainos,new,,0,0,6,0,C,1,N,1,M,,,,
+129,A,κακος,kakos,bad,,0,cacophony,6,0,C,1,N,1,M,,,,
+130,A,καλος,kalos,good; beautiful,,0,calligraphy,6,0,C,1,N,1,M,,,,
+131,A,μονος,monos,only,,0,monotheism,6,0,C,1,N,1,M,,,,
+132,A,πιστος,pistos,faithful,,0,pisteuo,6,0,C,1,N,1,M,,,,
+133,A,πρωτος,protos,first,,0,prototype,6,0,C,1,N,1,M,,,,
+134,A,σοφος,sophos,wise,,0,philosophy,6,0,C,1,N,1,M,,,,
+135,A,τριτος,tritos,third,,0,triton,6,0,C,1,N,1,M,,,,
+136,A,ἃγιος,hagios,holy; saint,,0,hagia sophia (holy wisdom),6,0,C,2,N,1,M,,,,
+137,A,αξιος,axios,worthy,,0,axiom,6,0,C,2,N,1,M,,,,
+138,A,δευτερος,deuteros,second,,0,Deuteronomy,6,0,C,2,N,1,M,,,,
+139,A,δικαιος,dikaios,righteous; just,,0,0,6,0,C,2,N,1,M,,,,
+140,A,ἓτερος,heteros,other; different,,0,heterosexual,6,0,C,2,N,1,M,,,,
+141,A,ισχυρος,ischuros,strong,,0,0,6,0,C,2,N,1,M,,,,
+142,A,μακαριος,makarios,blessed,,0,macarism (word of blessing),6,0,C,2,N,1,M,,,,
+143,A,μικρος,mikros,small; little,,0,microscope,6,0,C,2,N,1,M,,,,
+144,A,νεκρος,nekros,dead,,0,necromancy,6,0,C,2,N,1,M,,,,
+145,A,νεος,neos,new,,0,neonatal,6,0,C,2,N,1,M,,,,
+146,A,πονηρος,poneros,evil,,0,0,6,0,C,2,N,1,M,,,,
+147,A,αδυνατος,adunatos,impossible,,0,dynamic,6,0,C,3,N,1,M,,,,
+148,A,αιωνιος,aionios,eternal,,0,aeon,6,0,C,3,N,1,M,,,,
+149,A,ακαθαρτος,akathartos,unclean,,0,catharsis,6,0,C,3,N,1,M,,,,
+150,A,απιστος,apistos,unbelieving; faithfulness,,0,pisteuo,6,0,C,3,N,1,M,,,,
+151,V,ἁμαρτανω,hamartano,I sin,,0,Hamartiology,7,0,ω,,None,1,None,1,P,A,I
+152,V,βαλλω,ballo,I throw,,0,Ballistics,7,0,ω,,None,1,None,1,P,A,I
+153,V,εσθιω,esthio,I eat,,0,0,7,0,ω,,None,1,None,1,P,A,I
+154,V,εὑρισκω,heurisko,I find,,0,heuristic,7,0,ω,,None,1,None,1,P,A,I
+155,V,λειπω,leipo,I leave,,0,lipoid,7,0,ω,,None,1,None,1,P,A,I
+156,V,μανθανω,manthano,I learn,,0,mathematics,7,0,ω,,None,1,None,1,P,A,I
+157,V,πασχω,pascho,I suffer,,0,pathetic,7,0,ω,,None,1,None,1,P,A,I
+158,V,φευγω,feugo,I flee,,0,fugitive,7,0,ω,,None,1,None,1,P,A,I
+159,V,ηκουσα,ekousa,I heard,,2,0,7,0,,,None,1,None,1,A,A,I
+160,V,ἡμαρτησα,hemartesa,I sinned,,151,0,7,0,,,None,1,None,1,A,A,I
+161,V,εβαπτισα,ebaptisa,I baptized,,3,0,7,0,,,None,1,None,1,A,A,I
+162,V,εβλεψα,eblepsa,I saw,,4,0,7,0,,,None,1,None,1,A,A,I
+163,V,εγραψα,egrapsa,I wrote,,5,0,7,0,,,None,1,None,1,A,A,I
+164,V,εδιδαξα,edidaxa,I taught,,6,0,7,0,,,None,1,None,1,A,A,I
+165,V,εδοξασα,edoxasa,I glorified,,7,0,7,0,,,None,1,None,1,A,A,I
+166,V,ἡτοιμασα,hetoimasa,I prepared,,8,0,7,0,,,None,1,None,1,A,A,I
+167,V,εθεραπευσα,etherapeusa,I healed,,10,0,7,0,,,None,1,None,1,A,A,I
+168,V,εκηρυξα,ekeruxa,I preached,,11,0,7,0,,,None,1,None,1,A,A,I
+169,V,ελυσα,elusa,I loosed,,12,0,7,0,,,None,1,None,1,A,A,I
+170,V,επεισα,epeisa,I trusted in,,13,0,7,0,,,None,1,None,1,A,A,I
+171,V,επεμψα,epempsa,I sent,,14,0,7,0,,,None,1,None,1,A,A,I
+172,V,επιστευσα,episteusa,I believed,,15,0,7,0,,,None,1,None,1,A,A,I
+173,V,εσωσα,esosa,I saved,,16,0,7,0,,,None,1,None,1,A,A,I
+174,V,ηνεγκα,enegka,I bore; I brought,,,0,7,0,,,None,1,None,1,A,A,I
+175,V,ηγαγον,egagon,I led,,1,0,7,0,,,None,1,None,1,A2,A,I
+176,V,ἡμαρτον,hemarton,I sinned,,151,0,7,0,,,None,1,None,1,A2,A,I
+177,V,εβαλον,ebalon,I threw,,152,0,7,0,,,None,1,None,1,A2,A,I
+178,V,εγνων,egnon,I knew,,63,0,7,0,,,None,1,None,1,A2,A,I
+179,V,εφαγον,ephagon,I ate,,153,esophagous,7,0,,,None,1,None,1,A2,A,I
+180,V,εὑρον,heuron,I found,,154,0,7,0,,,None,1,None,1,A2,A,I
+181,V,εσχον,eschon,I had,,9,0,7,0,,,None,1,None,1,A2,A,I
+182,V,ελαβον,elabon,I took; I received,,64,0,7,0,,,None,1,None,1,A2,A,I
+183,V,ειπον,eipon,I said; I spoke,,65,0,7,0,,,None,1,None,1,A2,A,I
+184,V,ελιπον,elipon,I left behind; lacked,,155,0,7,0,,,None,1,None,1,A2,A,I
+185,V,εμαθον,emathon,I learned,,156,0,7,0,,,None,1,None,1,A2,A,I
+186,V,ειδον,eidon,I saw,,4,0,7,0,,,None,1,None,1,A2,A,I
+187,V,επαθον,epathon,I suffered,,157,0,7,0,,,None,1,None,1,A2,A,I
+188,V,εφυγον,ephugon,I fled,,158,0,7,0,,,None,1,None,1,A2,A,I
+189,V,ηνεγκον,enegkon,I bore; I brought,,,0,7,0,,,None,1,None,1,A2,A,I
+190,P,δια,dia,through; by,,0,diameter; diacritical,8,0,2,,G,,,,,,
+191,P,κατα,kata,against; down,,0,catapult; catalog,8,0,2,,G,,,,,,
+192,P,μετα,meta,with,,0,metabolic; metamorphosis,8,0,2,,G,,,,,,
+193,P,περι,peri,about; concerning;; for,,0,perimeter,8,0,2,,G,,,,,,
+194,P,ὑπερ,huper/hyper,for,,0,hypertension,8,0,2,,G,,,,,,
+195,P,ὑπο,hupo/hypo,by,,0,hypothermia,8,0,2,,G,,,,,,
+196,P,δια,dia,because of; on account of,,190,diameter; diacritical,8,0,2,,A,,,,,,
+197,P,κατα,kata,according to,,191,catapult; catalog,8,0,2,,A,,,,,,
+198,P,μετα,meta,after,,192,metabolic; metamorphosis,8,0,2,,A,,,,,,
+199,P,περι,peri,around,,193,perimeter,8,0,2,,A,,,,,,
+200,P,ὑπερ,huper/hyper,above; over,,194,hypertension,8,0,2,,A,,,,,,
+201,P,ὑπο,hupo/hypo,under,,195,hypothermia,8,0,2,,A,,,,,,
+202,P,επι,epi,upon;; on; at; about,,0,epidermis,8,0,3,,G,,,,,,
+203,P,παρα,para,from,,0,parallel,8,0,3,,G,,,,,,
+204,P,επι,epi,upon;; on; at; about,,202,epidermis,8,0,3,,D,,,,,,
+205,P,παρα,para,with,,203,parallel,8,0,3,,D,,,,,,
+206,P,επι,epi,upon;; on; at; about,,202,epidermis,8,0,3,,A,,,,,,
+207,P,παρα,para,beside; by,,203,parallel,8,0,3,,A,,,,,,
+208,P,ανα,ana,up,,0,analysis,8,0,1,,A,,,,,,
+209,P,αντι,anti,instead of;; in place of; for,,0,Antichrist,8,0,1,,G,,,,,,
+210,P,προ,pro,before,,0,prologue,8,0,1,,G,,,,,,
+211,P,προς,pros,to;; toward; with,,0,prosthesis,8,0,1,,A,,,,,,
+212,P,συν,sun/syn,with,,0,synthesis,8,0,1,,D,,,,,,
+213,V,αναγινωσκω,anaginosko,I read,Compound verb,0,0,8,0,ω,,None,1,None,1,P,A,I
+214,V,ανοιγω,anoigo,I open,Compound verb,0,0,8,0,ω,,None,1,None,1,P,A,I
+215,V,αποθνησκω,apothnesko,I die,Compound verb,0,0,8,0,ω,,None,1,None,1,P,A,I
+216,V,εκβαλλω,ekballo,I throw out; I cast out,Compound verb,0,0,8,0,ω,,None,1,None,1,P,A,I
+217,R,αυτος,autos,he; same; self,,0,automobile,9,0,P,,N,1,M,3,,,
+218,R,εγω,ego,I,,0,egocentric,9,0,P,,N,1,M,1,,,
+219,R,συ,su,you,,0,me casa; su casa,9,0,P,,N,1,M,2,,,
+220,V,οιδα,oida,I know,,0,0,10,0,ω,,None,1,None,1,P,A,I
+221,V,ἡμαρτηκα,hemarteka,I have sinned,,151,0,10,0,,,None,1,None,1,R,A,I
+222,V,βεβληκα,bebleka,I have thrown,,152,0,10,0,,,None,1,None,1,R,A,I
+223,V,εγνωκα,egnoka,I have known,,63,0,10,0,,,None,1,None,1,R,A,I
+224,V,ἡτοιμακα,hetoimaka,I have prepared,,8,0,10,0,,,None,1,None,1,R,A,I
+225,V,εὑρηκα,heureka,I have found,,154,0,10,0,,,None,1,None,1,R,A,I
+226,V,εσχηκα,escheka,I have had,,9,0,10,0,,,None,1,None,1,R,A,I
+227,V,τεθεραπευκα,tetherapeuka,I have healed,,26,0,10,0,,,None,1,None,1,R,A,I
+228,V,ειρηκα,eireka,I have said; I have spoken,,65,0,10,0,,,None,1,None,1,R,A,I
+229,V,λελυκα,leluka,I have loosed,,12,0,10,0,,,None,1,None,1,R,A,I
+230,V,μεμαθηκα,mematheka,I have learned,,156,0,10,0,,,None,1,None,1,R,A,I
+231,V,ἑωρακα,heoraka,I have seen,,4,0,10,0,,,None,1,None,1,R,A,I
+232,V,πεπιστευκα,pepisteuka,I have believed,,15,0,10,0,,,None,1,None,1,R,A,I
+233,V,σεσωκα,sesoka,I have saved,,16,0,10,0,,,None,1,None,1,R,A,I
+234,V,ακηκοα,akekoa,I have heard,,2,0,10,0,,,None,1,None,1,R2,A,I
+235,V,γεγραφα,gegrapha,I have written,,5,0,10,0,,,None,1,None,1,R2,A,I
+236,V,πεπονθα,pepontha,I have suffered,,157,0,10,0,,,None,1,None,1,R2,A,I
+237,V,πεποιθα,pepoitha,I have trusted in,,13,0,10,0,,,None,1,None,1,R2,A,I
+238,V,πεπομθα,pepomtha,I have sent,,14,0,10,0,,,None,1,None,1,R2,A,I
+239,V,πεφευγα,pepheuga,I have fled,,158,0,10,0,,,None,1,None,1,R2,A,I
+240,C,οτι,oti,that; because,,0,0,10,0,C,,,,,,,,
+241,R,ἐκεινος,ekeinos,that,,0,0,11,0,D,,N,1,M,1,,,
+242,R,οὑτος,houtos,this,,0,0,11,0,D,,N,1,M,1,,,
+243,N,ἀμνος,amnos,lamb,,0,0,11,0,2,1,N,1,M,,,,
+244,N,ἀρτος,artos,bread,,0,0,11,0,2,1,N,1,M,,,,
+245,N,διαβολος,diabolos,slanderer; devil,,0,diaboloical,11,0,2,1,N,1,M,,,,
+246,N,ἐχθρος,echthros,enemy,,0,0,11,0,2,1,N,1,M,,,,
+247,N,ἡλιος,helios,sun,,0,heliocentric,11,0,2,1,N,1,M,,,,
+248,N,θρονος,thronos,throne,,0,0,11,0,2,1,N,1,M,,,,
+249,N,καιρος,kairos,time; occasion,,0,0,11,0,2,1,N,1,M,,,,
+250,N,καρπος,karpos,fruit,,0,0,11,0,2,1,N,1,M,,,,
+251,N,λαος,laos,people,,0,laity,11,0,2,1,N,1,M,,,,
+252,N,ναος,naos,temple; sanctuary,,0,0,11,0,2,1,N,1,M,,,,
+253,N,οὐρανος,ouranos,heaven,,0,Uranus,11,0,2,1,N,1,M,,,,
+254,N,ὀφθαλμος,ophthalmos,eye,,0,ophthalmology,11,0,2,1,N,1,M,,,,
+255,N,Πετρος,Petros,Peter,,0,0,11,0,2,1,N,1,M,,,,
+256,N,σταυρος,stauros,cross,,0,0,11,0,2,1,N,1,M,,,,
+257,N,τοπος,topos,place,,0,topography,11,0,2,1,N,1,M,,,,
+258,N,τυφλος,tuphlos,blind man,,0,0,11,0,2,1,N,1,M,,,,
+259,N,φιλος,philos,friend,,0,Philanthropist,11,0,2,1,N,1,M,,,,
+260,N,φοβος,phobos,fear,,0,phobia,11,0,2,1,N,1,M,,,,
+261,N,χρονος,chronos,time,,0,chronological,11,0,2,1,N,1,M,,,,
+262,N,βιβλιον,biblion,book,,0,bibliography,11,0,2,1,N,1,N,,,,
+263,N,δαιμονιον,daimonion,demon,,0,daimonic,11,0,2,1,N,1,N,,,,
+264,N,ἱματιον,himation,cloak; garment,,0,0,11,0,2,1,N,1,N,,,,
+265,N,μυστηριον,musterion,secret,,0,mystery,11,0,2,1,N,1,N,,,,
+266,N,παιδιον,paidion,child,,0,pediatrics,11,0,2,1,N,1,N,,,,
+267,N,πλοιον,ploion,boat,,0,0,11,0,2,1,N,1,N,,,,
+268,N,σαββατον,sabbaton,Sabbath,,0,0,11,0,2,1,N,1,N,,,,
+269,N,σημειον,semeion,sign,,0,semantics,11,0,2,1,N,1,N,,,,
+270,V,ἀρχω,archo,I rule,(Takes the Gen),0,0,12,0,ω,,None,1,None,1,P,A,I
+271,V,ὑπαρψω,huparpso,I am; I exist,,0,0,12,0,ω,,None,1,None,1,P,A,I
+272,V,ἀποκρινομαι,apokrinomai,I answer,(Takes the Dat),0,0,12,0,μαι,,None,1,None,1,P,N,I
+273,V,ἀρχομαι,archomai,I begin,,0,αρχη,12,0,μαι,,None,1,None,1,P,N,I
+274,V,ἀσπαζομαι,aspadzomai,I greet,,0,0,12,0,μαι,,None,1,None,1,P,N,I
+275,V,βουλομαι,boulomai,I wish,,0,0,12,0,μαι,,None,1,None,1,P,N,I
+276,V,γινομαι,ginomai,I become; I am,Takes a complement,0,0,12,0,μαι,,None,1,None,1,P,N,I
+277,V,δεχομαι,dechomai,I receive,,0,0,12,0,μαι,,None,1,None,1,P,N,I
+278,V,ἐκπορευομαι,ekporeuomai,I come out; I go out,,0,0,12,0,μαι,,None,1,None,1,P,N,I
+279,V,ἐργαζομαι,ergadzomai,I work,,0,επγον,12,0,μαι,,None,1,None,1,P,N,I
+280,V,ἐρχομαι,erchomai,I come; I go,used with numerous preps;; 2nd Aor ἠλθον,0,0,12,0,μαι,,None,1,None,1,P,N,I
+281,V,εὐαγγελιζομαι,euangelidzomai,I preach the gospel; I bring good news,,0,0,12,0,μαι,,None,1,None,1,P,N,I
+282,V,λογιζομαι,logidzomai,I consider,,0,0,12,0,μαι,,None,1,None,1,P,N,I
+283,V,πορευομαι,poreuomai,I come; I go,,0,0,12,0,μαι,,None,1,None,1,P,N,I
+284,V,προσευχομαι,proseuchomai,I pray,,0,0,12,0,μαι,,None,1,None,1,P,N,I
+285,V,ψευδομαι,pseudomai,I lie,,0,pseudo,12,0,μαι,,None,1,None,1,P,N,I
+286,V,βεβλημαι,beblemai,I have been thrown,,,,13,0,ω,,None,1,None,1,R,N,I
+287,V,βεβαπτισμαι,bebaptismai,I have been baptized,,,,13,0,ω,,None,1,None,1,R,N,I
+288,V,εγνωσμαι,egnosmai,I have been known,,,,13,0,ω,,None,1,None,1,R,N,I
+289,V,γεγραμμαι,gegrammai,I have been written,,,,13,0,ω,,None,1,None,1,R,N,I
+290,V,λελυμαι,lelumai,I have been loosed,,,,13,0,ω,,None,1,None,1,R,N,I
+291,V,σεσωσμαι,sesosmai,I have been saved,,,,13,0,ω,,None,1,None,1,R,N,I
+292,B,ἀχρι,achri,until; up to,(with gen),0,,13,0,C,,,,,,,,
+293,B,ἐτι,eti,still; yet,,0,0,13,0,C,,,,,,,,
+294,B,ἑως,heos,until; up to,(with gen),0,,13,0,C,,,,,,,,
+295,B,καθως,kathos,just as; as,,0,0,13,0,C,,,,,,,,
+296,B,καλως,kalos,rightly; well,,0,0,13,0,C,,,,,,,,
+297,B,νυν,nun,now,,0,0,13,0,C,,,,,,,,
+298,B,ὁπου,hopou,where,,0,0,13,0,C,,,,,,,,
+299,B,ὁτε,hote,when,,0,0,13,0,C,,,,,,,,
+300,B,οὐκετι,ouketi,no longer,,35,(ουκ + ετι),13,0,N,,,,,,,,
+301,B,οὐχι,ouchi,not,(emphatic ου),35,,13,0,N,,,,,,,,
+302,B,σημερον,semeron,today,,0,0,13,0,C,,,,,,,,
+303,B,τοτε,tote,then,,0,0,13,0,C,,,,,,,,
+304,C,γαρ,gar,for,(postpositive),0,,13,0,C,,,,,,,,
+305,C,διο,dio,therefore,,0,Δ∴,13,0,C,,,,,,,,
+306,C,ἠ,e,or,,0,0,13,0,C,,,,,,,,
+307,C,μεν...δε,men...de,on the one hand...on the other hand,(postpositive),0,,13,0,C,,,,,,,,
+308,C,οὐδε,oude,and not; nor; not even,,0,(οὐ + δε),13,0,C,,,,,,,,
+309,C,οὐδε...οὐδε,oude...oude,neither...nor,,0,0,13,0,C,,,,,,,,
+310,C,οὐν,oun,therefore; then,(postpositive),0,,13,0,C,,,,,,,,
+311,B,ἀμην,amen,truly,,0,Amen,14,0,C,,,,,,,,
+312,B,ἀξιως,axios,worthily,,,0,14,0,C,,,,,,,,
+313,B,ἐγγυς,engus,near,,0,0,14,0,C,,,,,,,,
+314,B,ἐκει,ekei,there; in that place,,,0,14,0,C,,,,,,,,
+315,B,εὐθυς,euthus,immediately; at once,,,(Also appears as εὐθεως),14,0,C,,,,,,,,
+316,B,ἐξω,exo,outside,,0,0,14,0,C,,,,,,,,
+317,B,οὑτως,houtos,thus; in this manner,,,0,14,0,C,,,,,,,,
+318,B,παντοτε,pantote,always,,,0,14,0,C,,,,,,,,
+319,B,ποτε,pote,when?,,,0,14,0,C,,,,,,,,
+320,B,ὡδε,hode,here; in this place,,0,0,14,0,C,,None,1,None,1,A,P,I
+321,V,ηχθην,echthen,I was led,,,0,15,0,,,None,1,None,1,A,P,I
+322,V,ηκουσθην,ekousthen,I was heard,,,0,15,0,,,None,1,None,1,A,P,I
+323,V,εβληθην,eblethen,I was thrown,,,0,15,0,,,None,1,None,1,A,P,I
+324,V,εβαπτισθην,ebaptisthen,I was baptized,,,0,15,0,,,None,1,None,1,A,P,I
+325,V,εγενηθην,egenethen,I became,,,0,15,0,,,None,1,None,1,A,N,I
+326,V,εγνωσθην,egnosthen,I was known,,,0,15,0,,,None,1,None,1,A,P,I
+327,V,εδιδαχθην,edidachthen,I was taught,,,0,15,0,,,None,1,None,1,A,P,I
+328,V,εδοξασθην,edoxasthen,I was glorified,,,0,15,0,,,None,1,None,1,A,P,I
+329,V,ἡτοιμασθην,etoimasthen,I was prepared,,,0,15,0,,,None,1,None,1,A,P,I
+330,V,εκηρυχθην,ekeruchthen,I was preached,,,0,15,0,,,None,1,None,1,A,P,I
+331,V,ελημφθην,elemphthen,I was taken;I was received,,,0,15,0,,,None,1,None,1,A,P,I
+332,V,ελειφθην,eleiphthen,I was left,,,0,15,0,,,None,1,None,1,A,P,I
+333,V,επεισθην,epeisthen,I was trusted in,,,0,15,0,,,None,1,None,1,A,P,I
+334,V,επεμφθην,epemphthen,I was sent,,,0,15,0,,,None,1,None,1,A,P,I
+335,V,επορυεθην,eporuethen,I went,,,0,15,0,,,None,1,None,1,A,N,I
+336,V,εσωθην,esothen,I was saved,,,0,15,0,,,None,1,None,1,A,P,I
+337,V,ωφθην,ophthen,I was seen,,Find ὁραω,0,15,0,,,None,1,None,1,A,P,I
+338,V,απεσταλην,apestalen,I was sent,,Find αποστελλω,0,15,0,,,None,1,None,1,A2,P,I
+339,V,εγραφην,egraphev,I was written,,,0,15,0,,,None,1,None,1,A2,P,I
+340,N,αἱμα; αἱματος,haima; haimatos,blood,Nouns of the soma type,,hematology,17,0,3,,N,1,N,,,,
+341,N,θελημα; θεληματος,thelema; thelematos,will,Nouns of the soma type,,0,17,0,3,,N,1,N,,,,
+342,N,ονομα; ονοματος,onoma; onomatos,name,Nouns of the soma type,,onomatopoeia,17,0,3,,N,1,N,,,,
+343,N,πνευμα; πνευματος,pneuma; pneumatos,Spirit,Nouns of the soma type,,pneumatic,17,0,3,,N,1,N,,,,
+344,N,πυρ; πυρος,pur/pyr; puros,fire,Nouns of the soma type,,pyromaniac,17,0,3,,N,1,N,,,,
+345,N,ῥημα; ῥηματος,rema; rematos,word; saying,Nouns of the soma type,,rhetoric,17,0,3,,N,1,N,,,,
+346,N,σπερμα; σπερματος,sperma; spermatos,seed; descendant,Nouns of the soma type,,sperm,17,0,3,,N,1,N,,,,
+347,N,στομα; στοματος,stoma; stomatos,mouth,Nouns of the soma type,,0,17,0,3,,N,1,N,,,,
+348,N,σωμα; σωματος,soma; somatos,body,Nouns of the soma type,,somatic,17,0,3,,N,1,N,,,,
+349,N,ὑδωρ; ὑδατος,hudor/hydor; hudatos,water,Nouns of the soma type,,hydration,17,0,3,,N,1,N,,,,
+350,N,φως; φωτος,phos; photos,light,Nouns of the soma type,,photon,17,0,3,,N,1,N,,,,
+351,N,ἐλπις; ἐλπιδος,elpis; elpidos,hope,Nouns of the sarx type,,0,17,0,3,,N,1,F,,,,
+352,N,νυξ; νυκτος,nux; nuktos,night,Nouns of the sarx type,,nocturnal,17,0,3,,N,1,F,,,,
+353,N,σαρξ; σαρκος,sarx; sarkos,flesh,Nouns of the sarx type,,sarcophagus,17,0,3,,N,1,F,,,,
+354,N,χαρις; χαριτος,charis; charitos,grace; favor,Nouns of the sarx type,,0,17,0,3,,N,1,F,,,,
+355,N,χειρ; χειρος,cheir; cheiros,hand,Nouns of the sarx type,,chiropractic,17,0,3,,N,1,F,,,,
+356,N,αἰων; αἰωνος,aion; aionos,age,Nouns of the archon type,,aeon,17,0,3,,N,1,M,,,,
+357,N,ἀνηρ; ἀνδρος,aner; andros,man; husband,Nouns of the archon type,,android; androgenous,17,0,3,,N,1,M,,,,
+358,N,ἀρχων; ἀρχοντος,archon; archontos,ruler,Nouns of the archon type,,0,17,0,3,,N,1,M,,,,
+359,N,μαρτυς; μαρτυρος,martus; marturos,witness,Nouns of the archon type,,martyr,17,0,3,,N,1,M,,,,
+360,N,πατηρ; πατρος,pater; patros,father,Nouns of the archon type,,paternal,17,0,3,,N,1,M,,,,
+361,N,γενος; γενους,genos; genous,race,Nouns of the genos type,,genealogy,17,0,3,,N,1,N,,,,
+362,N,ἐθνος; ἐθνους,ethnos; ethnous,nation; Gentile,Nouns of the genos type,,ethnic,17,0,3,,N,1,N,,,,
+363,N,ελεος; ελεους,eleos; eleous,mercy,Nouns of the genos type,,0,17,0,3,,N,1,N,,,,
+364,N,ἐτος; ετους,etos; etous,year,Nouns of the genos type,,0,17,0,3,,N,1,N,,,,
+365,N,μερος; μερους,meros; merous,part,Nouns of the genos type,,0,17,0,3,,N,1,N,,,,
+366,N,πληθος; πληθους,plethos; plethous,multitude; crowd,Nouns of the genos type,,plethora,17,0,3,,N,1,N,,,,
+367,N,σκοτος; σκοτους,skotos; skotous,darkness,Nouns of the genos type,,0,17,0,3,,N,1,N,,,,
+368,N,τελος; τελους,telos; telous,end,Nouns of the genos type,,teleological,17,0,3,,N,1,N,,,,
+369,N,ἀρχιερευς; ἀρχιερεως,archiereus; archiereos,high priest; chief priest,Nouns of the basileus type,,0,17,0,3,,N,1,M,,,,
+370,N,βασιλευς; βασιλεως,basileus; basileos,king,Nouns of the basileus type,,0,17,0,3,,N,1,M,,,,
+371,N,γραμματευς; γραμματεως,grammateus; grammateos,scribe; teacher of the law,Nouns of the basileus type,,0,17,0,3,,N,1,M,,,,
+372,N,ἱερευς; ἱερεως,hiereus; hiereos,priest,Nouns of the basileus type,,hierarchy,17,0,3,,N,1,M,,,,
+373,N,ἀναστασις; ἀναστασεως,anastasis; anastaseos,resurrection,Nouns of the polis type,,0,17,0,3,,N,1,F,,,,
+374,N,γνωσις; γνωσεως,gnosis; gnoseos,knowledge,Nouns of the polis type,,0,17,0,3,,N,1,F,,,,
+375,N,δυναμις; δυναμεως,dunamis; dunameos,power,Nouns of the polis type,,0,17,0,3,,N,1,F,,,,
+376,N,θλιψις; θλιψεως,thlipsis; thlipseos,affliction; tribulation,Nouns of the polis type,,0,17,0,3,,N,1,F,,,,
+377,N,κλησις; κλησεως,klesis; kleseos,calling,Nouns of the polis type,,0,17,0,3,,N,1,F,,,,
+378,N,κρισις; κρισεως,krisis; kriseos,judgement,Nouns of the polis type,,critic,17,0,3,,N,1,F,,,,
+379,N,παρακλησις; παρακλησεως,paraklesis; parakleseos,comfort; encouragement,Nouns of the polis type,,0,17,0,3,,N,1,F,,,,
+380,N,πιστις; πιστεως,pistis; pisteos,faith,Nouns of the polis type,,0,17,0,3,,N,1,F,,,,
+381,N,πολις; πολεως,polis; poleos,city,Nouns of the polis type,,metropolis,17,0,3,,N,1,F,,,,
+382,N,γυνη; γυναικος,gune; gunaikos,woman; wife,Nouns of the archon type,,gynecology,17,0,3,,N,1,F,,,,
+383,N,θυγατηρ; θυγατρος,thugater; thugatros,daughter,Nouns of the archon type,,0,17,0,3,,N,1,F,,,,
+384,N,μητηρ; μητρος,meter; metros,mother,Nouns of the archon type,,maternal,17,0,3,,N,1,F,,,,
+385,A,ἁπας,apas,each; every; all; whole,Nouns of the soma type,,(emphatic πας),18,0,C,,N,1,M,,,,
+386,X,εἱς,heis,one,Nouns of the soma type,,0,18,0,N,,N,1,M,,,,
+387,A,μεγας,megas,great; large,Nouns of the soma type,,0,18,0,C,,N,1,M,,,,
+388,N,μηδεις,medeis,no one; none; nothing; no,Nouns of the soma type,,(With non-indicative),18,0,N,,N,1,M,,,,
+389,N,ουδεις,oudeis,no one; none; nothing; no,Nouns of the soma type,,(With indicative),18,0,N,,N,1,M,,,,
+390,N,πας,pas,each; every; all; whole,Nouns of the soma type,,0,18,0,C,,N,1,M,,,,
+391,A,πολυς,polus,much; many,Nouns of the soma type,,0,18,0,C,,N,1,M,,,,
+392,N,αληθης,alethes,TRUE,Nouns of the soma type,,0,18,0,,,,,θες,,,,
+393,N,δυο,duo,two,Nouns of the soma type,,0,18,0,,,,,0,,,,
+394,N,δωδεκα,dodeka,twelve,Nouns of the soma type,,0,18,0,,,,,0,,,,
+395,N,μειζων,meidzon,greater; larger,Nouns of the soma type,,0,18,0,,,,,ζον,,,,
+396,N,πεντε,pente,five,Nouns of the soma type,,0,18,0,,,,,0,,,,
+397,N,τεσσαρες,tessares,four,Nouns of the soma type,,0,18,0,,,,,ρα,,,,
+398,N,τρεις,treis,three,Nouns of the soma type,,0,18,0,,,,,τρια,,,,
+399,V,ἀγαπαω,agapao,I love,Contract verbs of the timao type,,0,14,0,,,,,0,,,,
+400,V,γενναω,gennao,I give birth to,Contract verbs of the timao type,,genealogy,14,0,,,,,0,,,,
+401,V,ἐπιτιμαω,epitimao,I rebuke; I warn,Contract verbs of the timao type,,0,14,0,,,,,0,,,,
+402,V,ἐρωταω,erotao,I ask; I request,Contract verbs of the timao type,,0,14,0,,,,,0,,,,
+403,V,ζαω,dzao,I live,Contract verbs of the timao type,,(dep fut ζησομαι),14,0,,,,,0,,,,
+404,V,μεριμναω,merimnao,I worry; I am anxious,Contract verbs of the timao type,,0,14,0,,,,,0,,,,
+405,V,νικαω,nikao,I overcome,Contract verbs of the timao type,,0,14,0,,,,,0,,,,
+406,V,ὁραω,hopao,I see,Contract verbs of the timao type,,(dep fut ὀψομαι),14,0,,,,,0,,,,
+407,V,πλαναω,planao,I deceive; I lead astray,Contract verbs of the timao type,,0,14,0,,,,,0,,,,
+408,V,τιμαω,timao,I honor,Contract verbs of the timao type,,Timothy,14,0,,,,,0,,,,
+409,V,ἀκολουθεω,akoloutheo,I follow,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+410,V,αἰτεω,aiteo,I ask,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+411,V,ἀσθενεω,astheneo,I am weak,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+412,V,βλασφημεω,blasphemeo,I revile; I blaspheme,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+413,V,δεω,deo,I bind; I tie,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+414,V,δικονεω,dikoneo,I serve; I minister to,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+415,V,δοκεω,dokeo,I think; I seem,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+416,V,ἐπικαλεω,epikaleo,I call upon,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+417,V,εὐλογεω,eulogeo,I bless,Contract verb of the phileo type,,eulogy,14,0,,,,,0,,,,
+418,V,εὐχαριστεω,eucharisteo,I give thanks; I thank (with dat),Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+419,V,ζητεω,dzeteo,I seek,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+420,V,θεωρεω,theoreo,I see; I perceive,Contract verb of the phileo type,,theory,14,0,,,,,0,,,,
+421,V,καλεω,kaleo,I call,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+422,V,κρατεω,krateo,I grasp; I take hold of,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+423,V,λαλεω,laleo,I speak,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+424,V,μαρτυρεω,martureo,I testify; I bear witness,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+425,V,μετανοεω,metanoeo,I repent,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+426,V,μισεω,miseo,I hate,Contract verb of the phileo type,,misogynist,14,0,,,,,0,,,,
+427,V,οικοδομεω,oikodomeo,I build up; I edify,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+428,V,παρακαλεω,parakaleo,I urge; I exhort; I comfort,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+429,V,περιπατεω,peripateo,I walk,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+430,V,ποιεω,poieo,I do; I make,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+431,V,προσκυνεω,proskuneo,I worship,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+432,V,τηρεω,tereo,I keep,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+433,V,φιλεω,phileo,I love,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+434,V,φωνεω,phoneo,I call,Contract verb of the phileo type,,0,14,0,,,,,0,,,,
+435,V,δηλοω,deloo,I show,Contract verb of the deloo type,,0,14,0,,,,,0,,,,
+436,V,δικαιοω,dikaioo,I justify,Contract verb of the deloo type,,0,14,0,,,,,0,,,,
+437,V,πληροω,pleroo,I fill; I fulfill,Contract verb of the deloo type,,0,14,0,,,,,0,,,,
+438,V,σταυροω,stauroo,I crucify,Contract verb of the deloo type,,0,14,0,,,,,0,,,,
+439,V,τελειοω,teleioo,I perfect; I complete,Contract verb of the deloo type,,0,14,0,,,,,0,,,,
+440,V,φανεροω,phaneroo,I reveal,Contract verb of the deloo type,,0,14,0,,,,,0,,,,
+441,V,ἀγγελλω,angello,I announce,Liquid Verb,,0,14,0,,,,,0,,,,
+442,V,αἰρω,airo,I take up; I take away,Liquid Verb,,0,14,0,,,,,0,,,,
+443,V,ἀναβαινω,anabaino,I go up; I ascend,Liquid Verb,,0,14,0,,,,,0,,,,
+444,V,ἀποκτεινω,apokteino,I kill,Liquid Verb,,0,14,0,,,,,0,,,,
+445,V,ἀποστελλω,apostello,I send,Liquid Verb,,0,14,0,,,,,0,,,,
+446,V,βαινω,baino,I go,Liquid Verb,,(always compounded in the NT;; dep fut βησομαι;; 2nd Aor ἐβην),14,0,,,,,0,,,,
+447,V,ἐγειρω,egeiro,I raise,Liquid Verb,,0,14,0,,,,,0,,,,
+448,V,θελω,thelo,I want; I will,Liquid Verb,,0,14,0,,,,,0,,,,
+449,V,καταβαινω,katabaino,I go down; I descend,Liquid Verb,,0,14,0,,,,,0,,,,
+450,V,κρινω,krino,I judge,Liquid Verb,,0,14,0,,,,,0,,,,
+451,V,μενω,meno,I remain; I abide,Liquid Verb,,permanent,14,0,,,,,0,,,,
+452,V,στειρω,speiro,I sow,Liquid Verb,,0,14,0,,,,,0,,,,
