@@ -1,6 +1,8 @@
 var db;
 var dataset;
 
+
+
 function initDatabase() {
     console.debug('called initDatabase()');
 
@@ -8,9 +10,9 @@ function initDatabase() {
         if (!window.openDatabase) {
             alert('not supported');
         } else {
-            var shortName = 'MyDatabase';
+            var shortName = 'Data';
             var version = '1.0';
-            var displayName = 'My Test Database Example';
+            var displayName = 'Data';
             var maxSizeInBytes = 65536;
             db = openDatabase(shortName, version, displayName, maxSizeInBytes);
 
@@ -29,7 +31,7 @@ function initDatabase() {
 function createTableIfNotExists() {
     console.debug('called createTableIfNotExists()');
 
-    var sql = "CREATE TABLE IF NOT EXISTS Contacts (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, phone TEXT)";
+    var sql = "CREATE TABLE IF NOT EXISTS Vocab (Key SMALLINT PRIMARY KEY,POS VARCHAR(1),DictForm VARCHAR(20),Transliteration VARCHAR(20),Translation VARCHAR(50),SpecialTags VARCHAR(25),LinkedTo SMALLINT ,Mnemonic VARCHAR(40),Chapter SMALLINT,DifficultyPreset SMALLINT,Type VARCHAR(7),Subtype VARCHAR(7),Case_ VARCHAR(4),Number SMALLINT,Gender VARCHAR(4),Person SMALLINT,Tense VARCHAR(2),Voice VARCHAR(1),Mood VARCHAR(1))";
 
     db.transaction(
         function (transaction) {
@@ -45,7 +47,7 @@ function insertRecord() {
     var name = $('#name').val();
     var phone = $('#phone').val();
 
-    var sql = 'INSERT INTO Contacts (name, phone) VALUES (?, ?)';
+    var sql = 'INSERT INTO Vocab (name, phone) VALUES (?, ?)';
 
     db.transaction(
         function (transaction) {
@@ -58,7 +60,7 @@ function insertRecord() {
 function deleteRecord(id) {
     console.debug('called deleteRecord()');
 
-    var sql = 'DELETE FROM Contacts WHERE id=?';
+    var sql = 'DELETE FROM Vocab WHERE id=?';
 
     db.transaction(
         function (transaction) {
@@ -78,7 +80,7 @@ function updateRecord() {
     var phone = $('#phone').val();
     var id = $("#id").val();
 
-    var sql = 'UPDATE Contacts SET name=?, phone=? WHERE id=?';
+    var sql = 'UPDATE Vocab SET name=?, phone=? WHERE id=?';
 
     db.transaction(
         function (transaction) {
@@ -91,7 +93,7 @@ function updateRecord() {
 function dropTable() {
     console.debug('called dropTable()');
 
-    var sql = 'DROP TABLE Contacts';
+    var sql = 'DROP TABLE Vocab';
 
     db.transaction(
         function (transaction) {
@@ -130,7 +132,7 @@ function handleErrors(transaction, error) {
 function showRecords() {
     console.debug('called showRecords()');
 
-    var sql = "SELECT * FROM Contacts";
+    var sql = "SELECT * FROM Vocab";
 
     db.transaction(
         function (transaction) {
