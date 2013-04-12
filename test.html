@@ -11,6 +11,7 @@
     <script src="js/vendor/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
 	<script src="js/jquery.csv-0.71.js"></script>
     <script src="js/jquery.json-2.4.js"></script>
+    <script src="js/indbtest.js"></script>
 
 	<title>Test</title>
   </head>
@@ -49,19 +50,25 @@
 		</div>
 	  </form>
 	  
-	  <p>Enter a city name (case sensitive, without state) to find cities and their zipcodes:</p>
-City: <input onchange="displayZipcodes(this.value)"></input>
-
-	  <div class="ui-body">
-		<div id="results"></div>
-	  </div>
+	  <p>Enter a zip code to find its city:</p>
+      Zipcode: <input onchange="displayCity(this.value)"></input>
+      City: <output id="city"></output>
+      </div>
+      <div>
+      <p>Enter a Lexicon Key:</p>
+      City: <input onchange="displayPOS(this.value)"></input>
+      <div id="GLexicon"></div>
+      </div>
+      <p><i>This example is only known to work in Firefox 4 and Chrome 11.</i></p>
+      <p><i>Your first query may take a very long time to complete.</i></p>
+      <p><i>You may need to start Chrome with --unlimited-quota-for-indexeddb</i></p>
 	  
 	  <p>Test 3</p>
 	  <div id=inputs class=clearfix>
           <input type=file id=files name=files[] multiple />
           <button id="CSVShow" type="button" data-inline="true" data-icon="plus" data-theme="c" onClick="printTable('data/Lexicon.csv')">Show</button>
       </div>
-	  <script type="text/javascript">
+	  <!--<script type="text/javascript">
 	        function printTable(file) {
     //$('#list').append(file+'<br>');
     var reader = $.get(file,function(inData){
@@ -70,18 +77,18 @@ City: <input onchange="displayZipcodes(this.value)"></input>
       var data = $.csv.toArrays(csv);
       var html = '';
       for(var row in data) {
-        html += '<tr>\r\n';
+        html += '<tr><br />';
         for(var item in data[row]) {
           html += '<td>' + data[row][item] + '</td>\r\n';
         }
-        html += '</tr>\r\n';
+        html += '</tr><br/>';
       }
       $('#contents').append(html);
       //$('#list').append(html);
     });
     reader.onerror = function(){ alert('Unable to read ' + file.fileName); };
   }
-	  </script>
+	  </script>--!>
 	  <hr />
       <output id=list>
       </output>
@@ -100,6 +107,6 @@ City: <input onchange="displayZipcodes(this.value)"></input>
 	  </footer>
 	</div>
   <script src="js/test.js"></script>
-  <script src="js/indbtest.js"></script>
+  
 </body>
 </html>
