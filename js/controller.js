@@ -176,7 +176,7 @@ function export_csv() {
     d.document.write('<html><textarea style="margin-top: 2px; margin-bottom: 2px; height: 287px; margin-left: 2px; margin-right: 2px; width: 462px; ">');
     for (var i=0 ; i<DECKMGR.active().length() ; i++) {
         var c = DECKMGR.active().current();
-        d.document.write('"'+escape(c.phrase1)+'","'+escape(c.phrase2)+'"\n');
+        d.document.write('"'+c.phrase1+'","'+c.phrase2+'"\n');
         DECKMGR.active().next();
     }
     d.document.write('</textarea></html>');
@@ -594,8 +594,8 @@ function updateDisplay(opts) {
         //navShow();
         hide('msg-container');
         optionShow();
-        document.getElementById('main').innerHTML = escape(card.phrase1);
-        document.getElementById('main-alt').innerHTML = escape(card.phrase2);
+        document.getElementById('main').innerHTML = card.phrase1;
+        document.getElementById('main-alt').innerHTML = encodeURI(card.phrase2);
         //document.getElementById('meter').innerHTML = card.points;
         document.getElementById('key').value = card.key;
         

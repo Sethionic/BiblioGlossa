@@ -39,9 +39,21 @@ Card.prototype.save = function () {
   o.phrase1 = this.phrase1;
   o.phrase2 = this.phrase2;
   o.points = this.points;
-  localStorage[this.key] = JSON.stringify(o,null,2);
+  localStorage[this.key] = JSON_stringify(o,true)
+  
+  console.log(JSON_stringify(o,true));
+  console.log(o);
 }
 
+function JSON_stringify(s, emit_unicode)
+{
+   var json = JSON.stringify(s);
+   return emit_unicode ? json : json.replace(/[\u007f-\uffff]/g,
+      function(c) { 
+        return '\\u'+('0000'+c.charCodeAt(0).toString(16)).slice(-4);
+      }
+   );
+}
 
 // return a random string that is not currently used in localStorage as a key
 function makeKey() {
