@@ -74,9 +74,11 @@
                         for(var row in data) {
                             html += '<tr>\r\n';
                             
-                            for(var item in data[row]) {
-                                html += '<td>' + data[row][item] + '</td>\r\n';
-                            }
+							if (data[row][8] == 4)
+								for(var item in data[row]) {							
+
+									html += '<td>' + data[row][item] + '</td>\r\n';
+								}
                             
                             html += '</tr>\r\n';
                         }

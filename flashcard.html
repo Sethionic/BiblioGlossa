@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="cache.manifest">
+<html manifest="flashcard.cache.manifest">
     <head>
         <title>Flashcards</title>
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0" >
@@ -97,8 +97,9 @@
                         
                         <input id="key" type="hidden" />
                         
-                        <button id="button-save-keypress" type="submit" style="visibility:hidden" onclick="save()">save</button>
-                        <div id="button-save" class="button" onclick="save()">save</div>
+                        <input type=file id=files name=files[] multiple />
+                        <button id="button-save-keypress" type="submit" style="visibility:hidden" onclick="save_chapt('data/Lexicon.csv')">save</button>
+                        <div id="button-save" class="button" onclick="save_chapt('data/Lexicon.csv')">save</div>
                     </form>
                 </div><!-- phrase-form -->
                 <div id="add-another" style="display:none">
@@ -145,7 +146,8 @@
         <script src="js/deck.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/deckmgr.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/controller.js" type="text/javascript" charset="utf-8"></script>
-        
+        <script src="js/add_greek.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/jquery.csv-0.71.js"></script>
         <script type="text/javascript" charset="utf-8">
             init();
             
