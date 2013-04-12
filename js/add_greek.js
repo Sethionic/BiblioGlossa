@@ -1,5 +1,5 @@
 function save_chapt(file) {
-  var chapt = document.getElementById('phrase-1').value;
+  var chapt = document.getElementById('phrase-2').value;
  // var phrase2 = document.getElementById('phrase-2').value;
   	var reader = $.get(file,function(inData){
 		var csv = inData;

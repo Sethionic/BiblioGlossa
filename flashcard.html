@@ -3,8 +3,9 @@
     <head>
         <title>Flashcards</title>
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0" >
-
+		
         <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <link rel="apple-touch-icon-precomposed" href="icon57.png" />
@@ -89,15 +90,16 @@
                 </div><!-- option-container -->
                 <div id="phrase-form" style="display:none">
                     <form action="" onsubmit="return false;">
-                        <label for="phrase-1">Phrase 1:</label>
-                        <input id="phrase-1" type="text" autocorrect="off" size="22" />
+                        <label for="phrase-1" >Sort By:</label>
+                        <select id="phrase-1">
+							<option value="chapter">Chapter</option>
+                        </select>
                         <br />
-                        <label for="phrase-2">Phrase 2:</label>
+                        <label for="phrase-2">Chapter:</label>
                         <input id="phrase-2" type="text" autocorrect="off" size="22" />
                         
                         <input id="key" type="hidden" />
                         
-                        <input type=file id=files name=files[] multiple />
                         <button id="button-save-keypress" type="submit" style="visibility:hidden" onclick="save_chapt('data/Lexicon.csv')">save</button>
                         <div id="button-save" class="button" onclick="save_chapt('data/Lexicon.csv')">save</div>
                     </form>
@@ -138,16 +140,16 @@
         </div>
         
         <script src="js/modernizr.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery-ui.min.js"></script>
-        <script src="js/BlobBuilder.min.js"></script>
-        <script src="js/FileSaver.min.js"></script>
+        <script src="js/jquery.min.js"  type="text/javascript" charset="utf-8"></script>
+        <script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/BlobBuilder.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/FileSaver.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/card.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/deck.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/deckmgr.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/controller.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/add_greek.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/jquery.csv-0.71.js"></script>
+        <script src="js/jquery.csv-0.71.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
             init();
             

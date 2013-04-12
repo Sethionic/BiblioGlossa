@@ -25,7 +25,7 @@ select {
 
 @font-face {
     font-family: "chalkduster";
-    src: url(Chalkduster.ttf) format("truetype");
+    src: url(Chalkduster.ttf) format("font/opentype");
 }
 
 a:link, a:visited {

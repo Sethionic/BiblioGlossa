@@ -5,6 +5,7 @@ CACHE MANIFEST
 data/Lexicon.csv
 js/vendor/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js 
 /css/stylesheet.css
+js/add_greek.js
 js/jquery.csv-0.71.js  
 js/jquery.json-2.4.js  
 js/test.js  
