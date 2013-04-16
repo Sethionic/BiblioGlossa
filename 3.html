@@ -40,14 +40,14 @@
             <h3>Lexicon Test</h3>
 
             <form id='Filters' action="" onSubmit="">
-            <button type="submit" onclick="alert(dev_UpdateSummary('Filters'))">Filter</button>
+            <button type="submit" onclick="console.log(dev_UpdateSummary('Filters'))">Filter</button>
             <output type="text" id='devOut'/>
             </form>
             
             <div id="FilterSet" class="selHolder">
             <div class='Word_Filter'>
             <label for="selPos" >Part of Speech:</label>
-            <select multiple required id='selPOS' name='POS' form='Filters'></select>
+            <select multiple id='selPOS' name='POS' form='Filters'></select>
             </div>
             <div class='Word_Filter'>
             <label for="selCase" >Case:</label>

@@ -144,7 +144,7 @@ function dev_UpdateSummary(name) {
         var temp=x.elements[i].value
         outS+=temp=x.elements[i].name+"["
         for (var j=0;j<temp.length;j++){
-            outS+=temp[j]
+            outS+=$("#"+x.elements[i].name+":selected").val()
         }
         outS+="],"
     }

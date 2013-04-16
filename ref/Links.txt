@@ -13,3 +13,6 @@ https://github.com/cesarjr/crud-offline
 
 #Greek
 http://wiki.logos.com/Morphology_Codes#Robinson_Greek_Morphology
+
+#Linked Combobox
+http://remysharp.com/2007/09/18/auto-populate-multiple-select-boxes/
