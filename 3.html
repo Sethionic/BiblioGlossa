@@ -6,29 +6,23 @@
         <meta http-equiv="X-UA-Compatible" content="chrome=1" />
         <meta name="description" content="Test" />
         
+        <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui-1.8.4.custom.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/stylesheet.css">
     <style type="text/css" media="screen">
     <!--
-      DIV.selHolder { float: left; border: 3px solid #ccc; margin: 10px; padding: 5px;}
+      DIV.selHolder { float: left; border: 3px solid #ccc; padding: 5px; width: 95%}
       TEXTAREA { width: 80%;}
       FIELDSET { border: 1px solid #ccc; padding: 1em; margin: 0; }
       LEGEND { color: #ccc; font-size: 120%; }
       LABEL { display: block; margin-top: 10px; } 
       #SELECT { margin: 10px; width: 200px; }
-      DIV.Word_Filter { float: left; width: 150px;}
-      
-      /* Interaction states
-      ----------------------------------*/
-      .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #d3d3d3; background: #e6e6e6 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #555555; }
-      .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #555555; text-decoration: none; }
-      .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #999999; background: #dadada url(img/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #212121; }
-      .ui-state-hover a, .ui-state-hover a:hover { color: #212121; text-decoration: none; }
-      .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #aaaaaa; background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #212121; }
-      .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #212121; text-decoration: none; }
-      .ui-widget :active { outline: none; }
+      DIV.Word_Filter { float: left; width: 155px;}
+      .inner {max-width: 95%}
+
     -->
     </style>
 
-        <link rel="stylesheet" type="text/css" media="screen" href="css/stylesheet.css">
+        
         <script src="js/vendor/jquery-1.8.3/jquery-1.8.3.js"></script>
         <script src="js/vendor/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
         <script src="js/jquery.csv-0.71.js"></script>
@@ -51,27 +45,27 @@
             <section id="main_content" class="inner">
             <h3>Lexicon Test</h3>
 
-            <form id='Filters' action="" onSubmit="">
-            <button type="button" onclick="console.log(dev_UpdateSummary('Filters'))">Filter</button>
+            <form id='FiltersForm' action="" onSubmit="">
+            <button form='FiltersForm' type="button" onclick="console.log(dev_UpdateSummary('Filters'))">Filter</button>
             <output type="text" id='devOut'></output>
             </form>
             
             <div id="FilterSet" class="selHolder">
             <div class='Word_Filter'>
             <label for="selPos" >Part of Speech:</label>
-            <select multiple id='selPOS' name='POS' form='Filters'></select>
+            <select multiple id='selPOS' name='POS' form='FiltersForm'></select>
             </div>
             <div class='Word_Filter'>
             <label for="selCase" >Case:</label>
-            <select multiple id='selCase' name='Case' form='Filters'></select>
+            <select multiple id='selCase' name='Case' form='FiltersForm'></select>
             </div>
             <div class='Word_Filter'>
             <label for="selNumber" >Number:</label>
-            <select multiple id='selNumber' name='Number' form='Filters'></select>
+            <select multiple id='selNumber' name='Number' form='FiltersForm'></select>
             </div>
             <div class='Word_Filter'>
             <label for="selGender" >Gender:</label>
-            <select multiple id='selGender' name='Gender' form='Filters'></select>
+            <select multiple id='selGender' name='Gender' form='FiltersForm'></select>
             </div>
             <script type="text/javascript">
             //$(document).ready(function {
