@@ -487,8 +487,8 @@ function initLexicon(file) {
 /*-------------------------Controller.js--------------------------*/
 /*
  * controller.js
- * Controls the state of the flashcard app using an instance of a Deck
- * requires makeKey() function defined in cards.js
+ * Controls the state of the flashword app using an instance of a WordList
+ * requires makeKey() function defined in words.js
  */
 
 // Contoller globals
@@ -522,7 +522,7 @@ function cancel() {
   document.getElementById('phrase-2').value = '';
   hotkeyEnable();
   resetDisplay();
-  show('card-container');
+  show('word-container');
   hide('option-container');
   updateDisplay();
 }
@@ -559,17 +559,17 @@ function createOptionNode(value, text, is_selected) {
     return opt;
 }
 
-//show conf screen for deleting a deck
-function deckDelete() {
-    hide('deck-choices');
-    document.getElementById('deck-delete-name').innerHTML = WORDLISTMGR.active().name;
-    document.getElementById('deck-delete-count').innerHTML = WORDLISTMGR.active().length();
-    show('deck-delete-conf');
+//show conf screen for deleting a wordlist
+function wordlistDelete() {
+    hide('wordlist-choices');
+    document.getElementById('wordlist-delete-name').innerHTML = WORDLISTMGR.active().name;
+    document.getElementById('wordlist-delete-count').innerHTML = WORDLISTMGR.active().length();
+    show('wordlist-delete-conf');
 }
 
-//generate drop down list for decks
-function deckListCreate() {
-    var elm = document.getElementById('deck-list');
+//generate drop down list for wordlists
+function wordlistListCreate() {
+    var elm = document.getElementById('wordlist-list');
     //clear previous entries
     elm.innerHTML = '';
     //static entries
@@ -578,24 +578,24 @@ function deckListCreate() {
     
     //dynamic entries
     for (var i=0 ; i<WORDLISTMGR.length() ; i++) {
-        var d = WORDLISTMGR.deck_at_index(i);
+        var d = WORDLISTMGR.wordlist_at_index(i);
         elm.appendChild(createOptionNode(i, d.name+' ('+d.length()+')', (d.key == WORDLISTMGR.active().key)));
     }
 }
 
-//show option form for current deck
-function deckRename() {
-    hide('deck-choices');
-    show('deck-form');
-    document.getElementById('deck-form-value').focus();
+//show option form for current wordlist
+function wordlistRename() {
+    hide('wordlist-choices');
+    show('wordlist-form');
+    document.getElementById('wordlist-form-value').focus();
 }
 
-//a deck was selected from the dropdown
+//a wordlist was selected from the dropdown
 //do add operation if value='add' was passed
-//do nothing if value is blank or current deck is already selected
-function deckSelect(value) {
+//do nothing if value is blank or current wordlist is already selected
+function wordlistSelect(value) {
     var current = 'default';
-    hide('deck-form');
+    hide('wordlist-form');
     switch(value) {
         case '':
         case current:
@@ -604,20 +604,20 @@ function deckSelect(value) {
             break;
         case 'add':
             //add operation
-            document.getElementById('deck-key').value = '';
-            document.getElementById('deck-form-value').value = '';
-            hide('deck-choices');
-            show('deck-form');
-            document.getElementById('deck-form-value').focus();
+            document.getElementById('wordlist-key').value = '';
+            document.getElementById('wordlist-form-value').value = '';
+            hide('wordlist-choices');
+            show('wordlist-form');
+            document.getElementById('wordlist-form-value').focus();
             break;
         default:
-            WORDLISTMGR.deck_load(value);
+            WORDLISTMGR.wordlist_load(value);
             updateDisplay();
     }
 }
 
 function del() {
-  document.getElementById('conf-msg').innerHTML = 'Are you sure you want to delete this card?';
+  document.getElementById('conf-msg').innerHTML = 'Are you sure you want to delete this word?';
   document.getElementById('conf-yes').onclick = delYes;
   document.getElementById('conf-no').onclick = delNo;
   hide('msg-container');
@@ -625,13 +625,13 @@ function del() {
   show('conf');
 }
 
-//delete active deck and all cards
-function delDeckYes() {
-    WORDLISTMGR.deck_delete();
+//delete active wordlist and all words
+function delWordListYes() {
+    WORDLISTMGR.wordlist_delete();
     if (WORDLISTMGR.length() <= 0) {
         init();
     }
-    saveDeckCancel();
+    saveWordListCancel();
     updateDisplay();
 }
 
@@ -640,19 +640,19 @@ function delNo() {
 }
 
 function delYes() {
-    WORDLISTMGR.active().deleteCard();
+    WORDLISTMGR.active().deleteWord();
     updateDisplay();
     hide('conf');
 }
 
-//set form to edit the current card
+//set form to edit the current word
 function edit() {
-  var card = WORDLISTMGR.active().current();
+  var word = WORDLISTMGR.active().current();
   hotkeyDisable();
   resetDisplay();
-  document.getElementById('phrase-1').value = card.phrase1;
-  document.getElementById('phrase-2').value = card.phrase2;
-  document.getElementById('key').value = card.key;
+  document.getElementById('phrase-1').value = word.phrase1;
+  document.getElementById('phrase-2').value = word.phrase2;
+  document.getElementById('key').value = word.key;
   show('phrase-form');
   document.getElementById('phrase-1').focus();
 }
@@ -672,7 +672,7 @@ function export_csv() {
 }
 
 //generate and prompt browser to download a .csv of
-//current deck of cards
+//current wordlist of words
 function eximExport() {
     var bb = new BlobBuilder;
     bb.append("Hello, world!");
@@ -731,14 +731,14 @@ function hotkeyEnable() {
 }
 
 function init() {
-  WORDLISTMGR = new DeckMGR('deckmgr');
-  //if deckmgr is empty it could be first run or need to be migrated
+  WORDLISTMGR = new WordListMGR('wordlistmgr');
+  //if wordlistmgr is empty it could be first run or need to be migrated
   if (WORDLISTMGR.length() <= 0) {
     migrationCheck();
-    //if still empty, add a default deck
+    //if still empty, add a default wordlist
     if (WORDLISTMGR.length() <= 0) {
-        var ndx = WORDLISTMGR.createDeck('default');
-        WORDLISTMGR.deck_load(ndx);
+        var ndx = WORDLISTMGR.createWordList('default');
+        WORDLISTMGR.wordlist_load(ndx);
     }
   }
   updateDisplay();
@@ -753,40 +753,40 @@ function isVisible(id) {
 function migrationCheck() {
     
     //prior to OO design
-    var c = localStorage["cards"];
+    var c = localStorage["words"];
     if (c) {
-        var deck = new Deck('deck');
-        var cards = JSON.parse(localStorage["cards"]);
-        for (var ndx=0; ndx < cards.length; ndx++) {
-            var oldCard = JSON.parse(localStorage[cards[ndx]]);
-            var newCard = new Card({'phrase1':oldCard['1'], 'phrase2':oldCard['2'], 'points':oldCard['points']});
-            newCard.save();
-            deck.add(newCard);
-            localStorage.removeItem(cards[ndx]);
+        var wordlist = new WordList('wordlist');
+        var words = JSON.parse(localStorage["words"]);
+        for (var ndx=0; ndx < words.length; ndx++) {
+            var oldWord = JSON.parse(localStorage[words[ndx]]);
+            var newWord = new Word({'phrase1':oldWord['1'], 'phrase2':oldWord['2'], 'points':oldWord['points']});
+            newWord.save();
+            wordlist.add(newWord);
+            localStorage.removeItem(words[ndx]);
         }
-        deck.save();
-        localStorage.removeItem("cards");
+        wordlist.save();
+        localStorage.removeItem("words");
     }
     
-    //migrate to DeckMGR >= 0.6.2
-    var deck = localStorage['deck'];
-    if (deck) {
-        WORDLISTMGR = new DeckMGR('deckmgr');
+    //migrate to WordListMGR >= 0.6.2
+    var wordlist = localStorage['wordlist'];
+    if (wordlist) {
+        WORDLISTMGR = new WordListMGR('wordlistmgr');
         
-        //copy deck to new format
-        var key = 'deck-'+makeKey();
-        localStorage[key] = deck;
+        //copy wordlist to new format
+        var key = 'wordlist-'+makeKey();
+        localStorage[key] = wordlist;
         
         //set the name
-        var d = new Deck(key);
+        var d = new WordList(key);
         d.name = 'default';
         d.save();
         
         //add to mgr and cleanup
-        WORDLISTMGR.deck_add(key);
-        WORDLISTMGR.deck_load(0);
+        WORDLISTMGR.wordlist_add(key);
+        WORDLISTMGR.wordlist_load(0);
         WORDLISTMGR.save();
-        localStorage.removeItem('deck');
+        localStorage.removeItem('wordlist');
     }
 }
 
@@ -813,7 +813,7 @@ function navHide() {
   hide('stats');
 }
 
-//display next card
+//display next word
 function next() {
     hotkeyDisable();
     WORDLISTMGR.active().next();
@@ -840,14 +840,14 @@ function optionHide() {
 function optionShow() {
     show('option-del');
     show('option-edit');
-    show('deck-choices');
+    show('wordlist-choices');
 }
 
 function options() {
     hotkeyDisable();
     hide('phrase-form');
-    hide('deck-delete-conf');
-    deckListCreate();
+    hide('wordlist-delete-conf');
+    wordlistListCreate();
     show('modal-container');
     show('option-container');
 }
@@ -855,28 +855,28 @@ function options() {
 function optionsClose() {
     hotkeyEnable();
     cancel();
-    hide('deck-form');
+    hide('wordlist-form');
     hide('option-container');
     hide('phrase-form');
     hide('modal-container');
 }
 
-//adjust point of card
+//adjust point of word
 function pointDown() {
-    var card = WORDLISTMGR.active().current();
-    card.pointDown();
-    card.save();
+    var word = WORDLISTMGR.active().current();
+    word.pointDown();
+    word.save();
     next();
 }
 
 function pointUp() {
-    var card = WORDLISTMGR.active().current();
-    card.pointUp();
-    card.save();
+    var word = WORDLISTMGR.active().current();
+    word.pointUp();
+    word.save();
     next();
 }
 
-//display previous card
+//display previous word
 function prev() {
     hotkeyDisable();
     WORDLISTMGR.active().prev();
@@ -904,7 +904,7 @@ function reset() {
 //clear all blocks that may be showing in the main display
 function resetDisplay() {
   hide('add-another');
-  hide('card-container');
+  hide('word-container');
   hide('option-container');
   hide('phrase-form');
 }
@@ -912,7 +912,7 @@ function resetDisplay() {
 function resetYes() {
   localStorage.clear();
   setMsg('Reset settings');
-  initDeck();
+  initWordList();
   hide('conf');
 }
 
@@ -921,7 +921,7 @@ function resetNo() {
   hide('conf');
 }
 
-// save card form
+// save word form
 function save() {
   var phrase1 = document.getElementById('phrase-1').value;
   var phrase2 = document.getElementById('phrase-2').value;
@@ -931,19 +931,19 @@ function save() {
   }
   
   var key = document.getElementById('key').value;
-  var card;
+  var word;
   var msg = '';
   //key is set -> edit
   if (key) {
-    card = new Card({'key':key});
-    card.phrase1 = phrase1;
-    card.phrase2 = phrase2;
-    card.save();
-    //msg = 'Card updated';
+    word = new Word({'key':key});
+    word.phrase1 = phrase1;
+    word.phrase2 = phrase2;
+    word.save();
+    //msg = 'Word updated';
   } else {
-    card = new Card({'phrase1':phrase1,'phrase2':phrase2});
-    card.save();
-    WORDLISTMGR.active().add(card);
+    word = new Word({'phrase1':phrase1,'phrase2':phrase2});
+    word.save();
+    WORDLISTMGR.active().add(word);
     WORDLISTMGR.active().save();
   }
   
@@ -956,46 +956,46 @@ function save() {
   setTimeout("msgClose()", 5000);
 }
 
-//save deck
-function saveDeck() {
-    var name = document.getElementById('deck-form-value').value;
+//save wordlist
+function saveWordList() {
+    var name = document.getElementById('wordlist-form-value').value;
     if (!name) {
         return;
     }
     
-    var index = document.getElementById('deck-key').value;
+    var index = document.getElementById('wordlist-key').value;
     
     var d;
     if (index) {
         //edit
-        d = WORDLISTMGR.deck_at_index(index);
+        d = WORDLISTMGR.wordlist_at_index(index);
         d.name = name;
         d.save();
     } else {
         //add new
-        index = WORDLISTMGR.createDeck(name);
+        index = WORDLISTMGR.createWordList(name);
     }
     
-    //must load to update deckmgr instance
-    WORDLISTMGR.deck_load(index);
+    //must load to update wordlistmgr instance
+    WORDLISTMGR.wordlist_load(index);
     
     //update list
     updateDisplay();
-    saveDeckCancel();
+    saveWordListCancel();
 }
 
 //cancel save operation, redo display
-function saveDeckCancel() {
-    show('deck-choices');
-    hide('deck-form');
-    hide('deck-delete-conf');
+function saveWordListCancel() {
+    show('wordlist-choices');
+    hide('wordlist-form');
+    hide('wordlist-delete-conf');
 }
 
 function show(id) {
   document.getElementById(id).style.display = '';
 }
 
-//shuffles the deck
+//shuffles the wordlist
 function shuffle() {
     WORDLISTMGR.active().shuffle();
     updateDisplay();
@@ -1058,33 +1058,33 @@ function toggleOptionsShow() {
   }
 }
 
-//set display for the current card
+//set display for the current word
 function updateDisplay(opts) {
     if (opts == undefined) {
         opts = {'direction':'right'};
     }
     flipReset();
     hide('conf');
-    var card = WORDLISTMGR.active().current();
-    if (!card) {
+    var word = WORDLISTMGR.active().current();
+    if (!word) {
         // set help text for first run.
         //navHide();
-        //hide edit/del options when there are 0 cards
-        setMsg('no cards in this deck, click here to add', function () {add();});
+        //hide edit/del options when there are 0 words
+        setMsg('no words in this wordlist, click here to add', function () {add();});
         optionHide();
         document.getElementById('main').innerHTML = 'Click here to toggle';
         document.getElementById('main-alt').innerHTML = 'Now add some';
         //document.getElementById('button-add').focus();
-        setStats('0 cards');
-        show('card-container');
+        setStats('0 words');
+        show('word-container');
     } else {
         //navShow();
         hide('msg-container');
         optionShow();
-        document.getElementById('main').innerHTML = card.phrase1;
-        document.getElementById('main-alt').innerHTML = encodeURI(card.phrase2);
-        //document.getElementById('meter').innerHTML = card.points;
-        document.getElementById('key').value = card.key;
+        document.getElementById('main').innerHTML = word.phrase1;
+        document.getElementById('main-alt').innerHTML = encodeURI(word.phrase2);
+        //document.getElementById('meter').innerHTML = word.points;
+        document.getElementById('key').value = word.key;
         
         setStats((WORDLISTMGR.active().index+1) + ' / ' + WORDLISTMGR.active().length());
     }
@@ -1110,9 +1110,9 @@ function updateDisplay(opts) {
 
 //update the state of the options to show current state
 function updateOptions() {
-    deckListCreate();
-    document.getElementById('deck-key').value = WORDLISTMGR.index;
-    document.getElementById('deck-form-value').value = WORDLISTMGR.active().name;
+    wordlistListCreate();
+    document.getElementById('wordlist-key').value = WORDLISTMGR.index;
+    document.getElementById('wordlist-form-value').value = WORDLISTMGR.active().name;
     document.getElementById('option-animation').className = (WORDLISTMGR.mode_animations) ? 'switch-on' : 'switch-off';
     document.getElementById('option-reverse').className = (WORDLISTMGR.mode_reverse) ? 'switch-on' : 'switch-off';
 }
