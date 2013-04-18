@@ -13,14 +13,48 @@ function Word(opts) {
     //set attrs if key is in localStorage
     if (localStorage[this.key]) {
         var c = JSON.parse(localStorage[this.key]);
-        this.phrase1 = c.phrase1;
-        this.phrase2 = c.phrase2;
+        this.Key = c.Key;
+        this.POS = c.POS;
+        this.DictForm = c.DictForm;
+        this.Transliteration = c.Transliteration;
+        this.Translation = c.Translation;
+        this.SpecialTags = c.SpecialTags;
+        this.LinkedTo = c.LinkedTo;
+        this.Mnemonic = c.Mnemonic;
+        this.Chapter = c.Chapter;
+        this.DifficultyPreset = c.DifficultyPreset;
+        this.Type = c.Type;
+        this.Subtype = c.Subtype;
+        this.Case_ = c.Case_;
+        this.Num = c.Num;
+        this.Gender = c.Gender;
+        this.Person = c.Person;
+        this.Tense = c.Tense;
+        this.Voice = c.Voice;
+        this.Mood = c.Mood;
         this.points = c.points;
         return;
     }
     
-    this.phrase1 = (opts.phrase1) ? opts.phrase1 : '';
-    this.phrase2 = (opts.phrase2) ? opts.phrase2 : '';
+    this.Key = (opts.Key) ? opts.Key : '' ;
+    this.POS = (opts.POS) ? opts.POS : '' ;
+    this.DictForm = (opts.DictForm) ? opts.DictForm : '' ;
+    this.Transliteration = (opts.Transliteration) ? opts.Transliteration : '' ;
+    this.Translation = (opts.Translation) ? opts.Translation : '' ;
+    this.SpecialTags = (opts.SpecialTags) ? opts.SpecialTags : '' ;
+    this.LinkedTo = (opts.LinkedTo) ? opts.LinkedTo : '' ;
+    this.Mnemonic = (opts.Mnemonic) ? opts.Mnemonic : '' ;
+    this.Chapter = (opts.Chapter) ? opts.Chapter : '' ;
+    this.DifficultyPreset = (opts.DifficultyPreset) ? opts.DifficultyPreset : '' ;
+    this.Type = (opts.Type) ? opts.Type : '' ;
+    this.Subtype = (opts.Subtype) ? opts.Subtype : '' ;
+    this.Case_ = (opts.Case_) ? opts.Case_ : '' ;
+    this.Num = (opts.Num) ? opts.Num : '' ;
+    this.Gender = (opts.Gender) ? opts.Gender : '' ;
+    this.Person = (opts.Person) ? opts.Person : '' ;
+    this.Tense = (opts.Tense) ? opts.Tense : '' ;
+    this.Voice = (opts.Voice) ? opts.Voice : '' ;
+    this.Mood = (opts.Mood) ? opts.Mood : '' ;
     this.points = (opts.points) ? opts.points : 0;
 }
 
@@ -38,9 +72,25 @@ Word.prototype.save = function () {
   //in the constructure (i.e. this = JSON.parse..)
   var o = new Object();
   o.key = this.key;
-  o.phrase1 = this.phrase1;
-  o.phrase2 = this.phrase2;
-  o.points = this.points;
+  o.Key = this.Key;
+  o.POS = this.POS;
+  o.DictForm = this.DictForm;
+  o.Transliteration = this.Transliteration;
+  o.Translation = this.Translation;
+  o.SpecialTags = this.SpecialTags;
+  o.LinkedTo = this.LinkedTo;
+  o.Mnemonic = this.Mnemonic;
+  o.Chapter = this.Chapter;
+  o.DifficultyPreset = this.DifficultyPreset;
+  o.Type = this.Type;
+  o.Subtype = this.Subtype;
+  o.Case_ = this.Case_;
+  o.Num = this.Num;
+  o.Gender = this.Gender;
+  o.Person = this.Person;
+  o.Tense = this.Tense;
+  o.Voice = this.Voice;
+  o.Mood = this.Mood;
   localStorage[this.key] = JSON_stringify(o,true)
   
   console.log(JSON_stringify(o,true));
@@ -324,7 +374,7 @@ function JSON_stringify(s, emit_unicode) {
 
 
 /*-----------------------Population-------------------------------*/
-function save_chapt(file) {
+function initLexicon(file) {
   var Name = "Main_Lexicon";
  // var phrase2 = document.getElementById('phrase-2').value;
   	var reader = $.get(file,function(inData){
@@ -395,38 +445,42 @@ function save_chapt(file) {
                 'Mood':data[row][18]
 			});
 			word.save();
-			DECKMGR.active().add(word);
-			DECKMGR.active().save();
+			WORDLISTMGR.active().add(word);
+			WORDLISTMGR.active().save();
 			}
+			
 			
 			/* Filtering checks
 			if (data[row][8] == chapt){
 			*/
 				
-				//phrase1 = data[row][2];
-				//phrase2 = data[row][4];
+			//phrase1 = data[row][2];
+			//phrase2 = data[row][4];
 
-				//Empty Field Check 
-				/* should probably check key,POS,etc...
+			//Empty Field Check 
+			/* should probably check key,POS,etc...
 				if (!phrase1 || !phrase2) {
 					return;
 				}*/
 				
 				
 				
-			/*}//Filter Check End*/
+			/*
+			}//Filter Check End
+			*/
+			
 		}
 	});
 	
 	reader.onerror = function(){ alert('Unable to read ' + file.fileName);};
 
-  cancel();
-  updateDisplay();
-  resetDisplay();
-  show('add-another');
-  document.getElementById('button-add-another').focus();
-  hotkeyEnable();
-  setTimeout("msgClose()", 5000);
+  //cancel();
+  //updateDisplay();
+  //resetDisplay();
+  //show('add-another');
+  //document.getElementById('button-add-another').focus();
+  //hotkeyEnable();
+  //setTimeout("msgClose()", 5000);
 }
 /*----------------------------------------------------------------*/
 
