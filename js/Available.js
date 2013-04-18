@@ -152,7 +152,7 @@ function loadSel(name,data) { //Load a select tag "item" with array "data"
     //Probably need to spell it out better, step by step
         selBox.append( $("<option />").text(data[i].text).val(data[i].value) )
     }
-    $(selBox).dropdownchecklist({emptyText: "Please select ..." , width: 150 , firstItemChecksAll: true });// { width: 150 } );
+    $(selBox).dropdownchecklist({emptyText: "Please select ..." , width: 150 , firstItemChecksAll: true , maxDropHeight: 150 });// { width: 150 } );
 }
 
 function dev_UpdateSummary(name) {
