@@ -52,6 +52,10 @@
             
             <div id="FilterSet" class="selHolder">
             <div class='Word_Filter'>
+            <label for="selChapter" >Chapter:</label>
+            <select multiple id='selChapter' name='Chapter' form='FiltersForm'></select>
+            </div>
+            <div class='Word_Filter'>
             <label for="selPos" >Part of Speech:</label>
             <select multiple id='selPOS' name='POS' form='FiltersForm'></select>
             </div>
@@ -60,18 +64,20 @@
             <select multiple id='selCase' name='Case' form='FiltersForm'></select>
             </div>
             <div class='Word_Filter'>
-            <label for="selNumber" >Number:</label>
-            <select multiple id='selNumber' name='Number' form='FiltersForm'></select>
+            <label for="selMood" >Mood:</label>
+            <select multiple id='selMood' name='Mood' form='FiltersForm'></select>
             </div>
             <div class='Word_Filter'>
             <label for="selGender" >Gender:</label>
             <select multiple id='selGender' name='Gender' form='FiltersForm'></select>
             </div>
+            
             <script type="text/javascript">
             //$(document).ready(function {
+            loadSel($('#selChapter'),A_Chapter);
             loadSel($('#selPOS'),A_POS);
             loadSel($('#selCase'),A_Case);
-            loadSel($('#selNumber'),A_Number);
+            loadSel($('#selMood'),A_Mood);
             loadSel($('#selGender'),A_Gender);
             //});
             </script>

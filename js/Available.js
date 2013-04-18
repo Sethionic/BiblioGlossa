@@ -8,7 +8,8 @@ It is possible to make the data source a .json file rather than straight arrays 
 http://stackoverflow.com/questions/815103/jquery-best-practice-to-populate-drop-down
 \*--------------------------------------------------------------*/
 
-var A_Chapters= [
+A_Chapter= [
+{text: '(All)',value: '0'},
 {text: 'Chapter 3',value: '3'},
 {text: 'Chapter 4',value: '4'},
 {text: 'Chapter 5',value: '5'},
@@ -27,6 +28,7 @@ var A_Chapters= [
 {text: 'Chapter 18',value: '18'}];
 
 A_POS=[
+{text: '(All)',value: '0'},
 {text: 'Adjective',value: 'A'},
 {text: 'Adverb',value: 'B'},
 {text: 'Conjunction',value: 'C'},
@@ -40,21 +42,25 @@ A_POS=[
 {text: 'Indeclinable',value: 'Z'}];
 
 A_Case=[
+{text: '(All)',value: '0'},
 {text: 'Accusative',value: 'A'},
 {text: 'Dative',value: 'D'},
 {text: 'Genitive',value: 'G'},
 {text: 'Nominative',value: 'N'}];
 
 A_Number=[
+{text: '(All)',value: '0'},
 {text: 'Singular',value: '1'},
 {text: 'Plural',value: '2'}];
 
 A_Gender=[
+{text: '(All)',value: '0'},
 {text: 'Masculine',value: 'M'},
 {text: 'Feminine',value: 'F'},
 {text: 'Neuter',value: 'N'}];
 
 A_Tense=[
+{text: '(All)',value: '0'},
 {text: 'Aorist',value: 'A'},
 {text: 'Second Aorist',value: 'A2'},
 {text: 'Future',value: 'F'},
@@ -69,6 +75,7 @@ A_Tense=[
 {text: 'No Voice Stated',value: 'X'}];
 
 A_Voice=[
+{text: '(All)',value: '0'},
 {text: 'Active',value: 'A'},
 {text: 'Middle Deponent',value: 'D'},
 {text: 'Either Middle or Passive',value: 'E'},
@@ -80,6 +87,7 @@ A_Voice=[
 {text: 'No Voice Stated',value: 'X'}];
 
 A_Mood=[
+{text: '(All)',value: '0'},
 {text: 'Indicative',value: 'I'},
 {text: 'Imperative',value: 'M'},
 {text: 'Infinitive',value: 'N'},
@@ -94,6 +102,7 @@ switch(POS)
 {
 case 'N': //If Noun, Declension
     A_Type=[
+    {text: '(All)',value: '0'},
     {text: 'First Declension',value: '1'},
     {text: 'Second Declension',value: '2'},
     {text: 'Third Declension',value: '3'}];
@@ -101,18 +110,24 @@ case 'N': //If Noun, Declension
 case 'A': //If Adjective
 case 'B': //If Adverb
 case 'L': //If Particle
-    A_Type=[{text: 'Comparative',value: 'C'},
+    A_Type=[
+    {text: '(All)',value: '0'},
+    {text: 'Comparative',value: 'C'},
     {text: 'Interrogative',value: 'I'},
     {text: 'Negative',value: 'N'},
     {text: 'Superlative',value: 'S'}];
     break;
 case 'P': //If Preposition
-    A_Type=[{text: 'Single Termination',value: '1'},
+    A_Type=[
+    {text: '(All)',value: '0'},
+    {text: 'Single Termination',value: '1'},
     {text: 'Double Termination',value: '2'},
     {text: 'Triple Termination',value: '3'}];
     break;
 case 'R': //If Noun
-    A_Type=[{text: 'Reciprocal',value: 'C'},
+    A_Type=[
+    {text: '(All)',value: '0'},
+    {text: 'Reciprocal',value: 'C'},
     {text: 'Demonstrative',value: 'D'},
     {text: 'Reflexive',value: 'F'},
     {text: 'Interrogative',value: 'I'},
@@ -137,7 +152,7 @@ function loadSel(name,data) { //Load a select tag "item" with array "data"
     //Probably need to spell it out better, step by step
         selBox.append( $("<option />").text(data[i].text).val(data[i].value) )
     }
-    $(selBox).dropdownchecklist({emptyText: "Please select ..." , width: 150 });// { width: 150 } );
+    $(selBox).dropdownchecklist({emptyText: "Please select ..." , width: 150 , firstItemChecksAll: true });// { width: 150 } );
 }
 
 function dev_UpdateSummary(name) {
