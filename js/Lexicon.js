@@ -1177,6 +1177,7 @@ function word2html(word){
     word.
 }
 /*
+        Word Attributes:
         word.Key
         word.POS
         word.DictForm
