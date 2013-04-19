@@ -817,7 +817,7 @@ function navHide() {
 function next() {
     hotkeyDisable();
     WORDLISTMGR.active().next();
-    /*if (WORDLISTMGR.mode_animations) {
+    if (WORDLISTMGR.mode_animations) {
         if (isVisible('main')) {
             $('#main').hide("slide", { direction: "left" }, 300, function () {updateDisplay()});
         } else {
@@ -827,8 +827,9 @@ function next() {
         hide('main');
         updateDisplay();
     }
-    updateDisplay();*/
+    updateDisplay();
 }
+next=function(){hotkeyDisable();WORDLISTMGR.active().next();} //Ignore GUI
 
 //hide edit/del options
 function optionHide() {
@@ -891,6 +892,7 @@ function prev() {
         updateDisplay({'direction':'left'});
     }
 }
+prev=function () {hotkeyDisable();WORDLISTMGR.active().prev();} //Ignoring GUI
 
 function reset() {
   document.getElementById('conf-msg').innerHTML = 'Are you sure you want to reset everything?';
@@ -1107,6 +1109,7 @@ function updateDisplay(opts) {
     updateOptions();
     hotkeyEnable();
 }
+updateDisplay=updateConsole_dev //This ignores the flashcard GUI
 
 function updateConsole_dev(opts) {
     if (opts == undefined) {
@@ -1165,8 +1168,41 @@ function testInit_dev() {
     }
 }
 
-function filter_create_deck(params) {
+function filter_create_deck(name,params) {
+for (var i=0;i<0;i++){}
+}
 
+//For Lexicon.html, use this to turn a word into an entry
+function word2html(word){
+    word.
+}
+/*
+        word.Key
+        word.POS
+        word.DictForm
+        word.Transliteration
+        word.Translation
+        word.SpecialTags
+        word.LinkedTo
+        word.Mnemonic
+        word.Chapter
+        word.DifficultyPreset
+        word.Type
+        word.Subtype
+        word.Case_
+        word.Num
+        word.Gender
+        word.Person
+        word.Tense
+        word.Voice
+        word.Mood
+        word.points
+*/
+
+function mainRunner(){
+    init();
+    //Capture key events
+    document.onkeydown = checkHotkey;
 }
 
 /*
