@@ -155,6 +155,10 @@ function loadSel(name,data) { //Load a select tag "item" with array "data"
     $(selBox).dropdownchecklist({emptyText: "Please select ..." , width: 150 , firstItemChecksAll: true , maxDropHeight: 150 });// { width: 150 } );
 }
 
+//This enumerates selected options
+//ITEM=selPOS;outS="{"+ITEM.name+"{";for (var i=0;i<ITEM.selectedOptions.length;i++){outS+=ITEM.selectedOptions[i].value+","};outS+="}}"
+
+
 function dev_UpdateSummary(name) {
     var outS = '';
     var x=document.getElementById(name);
