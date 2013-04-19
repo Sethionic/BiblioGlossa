@@ -388,7 +388,7 @@ function initLexicon(file) {
 			var phrase2 = '';
 			*/
 			
-			var key = document.getElementById('key').value;
+			var key = $('#key').value;
 			var word;
 			var msg = '';
 			//key is set -> edit
@@ -508,7 +508,7 @@ get_blob_builder = function() {
 function add() {
   hide('option-container');
   hotkeyDisable();
-  document.getElementById('key').value = '';
+  $('#key').value = '';
   //document.getElementById('button-save').onclick = save;
   resetDisplay();
   show('modal-container');
@@ -652,7 +652,7 @@ function edit() {
   resetDisplay();
   document.getElementById('phrase-1').value = word.phrase1;
   document.getElementById('phrase-2').value = word.phrase2;
-  document.getElementById('key').value = word.key;
+  $('#key').value = word.key;
   show('phrase-form');
   document.getElementById('phrase-1').focus();
 }
@@ -734,7 +734,7 @@ function init() {
   WORDLISTMGR = new WordListMGR('wordlistmgr');
   //if wordlistmgr is empty it could be first run or need to be migrated
   if (WORDLISTMGR.length() <= 0) {
-    migrationCheck();
+    //migrationCheck();
     //if still empty, add a default wordlist
     if (WORDLISTMGR.length() <= 0) {
         var ndx = WORDLISTMGR.createWordList('default');
@@ -817,7 +817,7 @@ function navHide() {
 function next() {
     hotkeyDisable();
     WORDLISTMGR.active().next();
-    if (WORDLISTMGR.mode_animations) {
+    /*if (WORDLISTMGR.mode_animations) {
         if (isVisible('main')) {
             $('#main').hide("slide", { direction: "left" }, 300, function () {updateDisplay()});
         } else {
@@ -827,7 +827,7 @@ function next() {
         hide('main');
         updateDisplay();
     }
-    //updateDisplay();
+    updateDisplay();*/
 }
 
 //hide edit/del options
@@ -922,7 +922,7 @@ function resetNo() {
 }
 
 // save word form
-function save() {
+/*function save() {
   var phrase1 = document.getElementById('phrase-1').value;
   var phrase2 = document.getElementById('phrase-2').value;
   
@@ -930,7 +930,7 @@ function save() {
     return;
   }
   
-  var key = document.getElementById('key').value;
+  var key = $('#key').value;
   var word;
   var msg = '';
   //key is set -> edit
@@ -954,7 +954,7 @@ function save() {
   document.getElementById('button-add-another').focus();
   hotkeyEnable();
   setTimeout("msgClose()", 5000);
-}
+}*/
 
 //save wordlist
 function saveWordList() {
@@ -1084,7 +1084,7 @@ function updateDisplay(opts) {
         document.getElementById('main').innerHTML = word.phrase1;
         document.getElementById('main-alt').innerHTML = encodeURI(word.phrase2);
         //document.getElementById('meter').innerHTML = word.points;
-        document.getElementById('key').value = word.key;
+        $('#key').value = word.key;
         
         setStats((WORDLISTMGR.active().index+1) + ' / ' + WORDLISTMGR.active().length());
     }
@@ -1108,6 +1108,40 @@ function updateDisplay(opts) {
     hotkeyEnable();
 }
 
+function updateConsole_dev(opts) {
+    if (opts == undefined) {
+        opts = {'direction':'right'};
+    }
+    //flipReset();
+    //hide('conf');
+    var word = WORDLISTMGR.active().current();
+    if (!word) {
+        // set help text for first run.
+        //navHide();
+        //hide edit/del options when there are 0 words
+        setMsg('no words in this wordlist, click here to add', function () {add();});
+        //optionHide();
+        console.log( 'Click here to toggle'+'Now add some' );
+        //document.getElementById('button-add').focus();
+        setStats('0 words');
+        //show('word-container');
+    } else {
+        //navShow();
+        //hide('msg-container');
+        //optionShow();
+        console.log(word.Key+': '+word.DictForm);
+        //document.getElementById('main-alt').innerHTML = encodeURI(word.phrase2);
+        //document.getElementById('meter').innerHTML = word.points;
+        $('#key').value = word.key;
+        
+        console.log("Stats: "+(WORDLISTMGR.active().index+1) + ' / ' + WORDLISTMGR.active().length());
+    }
+    
+    //updateOptions();
+    hotkeyEnable();
+}
+
+
 //update the state of the options to show current state
 function updateOptions() {
     wordlistListCreate();
@@ -1121,9 +1155,23 @@ function updateOptions() {
 
 /*------------------------MAIN------------------------------------*/
 
+//Demonstrate DB (object array) Creation
+function testInit_dev() { 
+    var localStorage = new Object();
+    WORDLISTMGR = new WordListMGR('wordlistmgr');
+    initLexicon("data/Lexicon.csv")
+    for (var i;i<40;i++){
+    updateConsole_dev();next()
+    }
+}
 
+function filter_create_deck(params) {
+
+}
+
+/*
 var localStorage = new Object();
 localStorage.removeItem = function (key) {
     delete this[key];
 }
-
+*/
