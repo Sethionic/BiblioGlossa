@@ -97,7 +97,7 @@ A_Mood=[
 {text: 'Subjunctive',value: 'S'}];
 
 A_Type=[]; //Type Column is dependent on POS
-function get_Type(POS,f){
+function get_Type(POS){
 switch(POS)
 {
 case 'N': //If Noun, Declension
@@ -141,7 +141,7 @@ case 'R': //If Noun
 default: //If Verb or otherwise
     break;
 }
-f(A_Type)
+return A_Type;
 }
 
 function loadSel(name,data) { //Load a select tag "item" with array "data"
@@ -161,6 +161,7 @@ function CLSummary(ITEM){
 }
 
 function dev_UpdateSummary(name) {
+    return null;//Fix later, short-circuit to test filter button
     console.log("dev_UpdateSummary()")
     var outS = '';
     x=[$('#selChapter'),

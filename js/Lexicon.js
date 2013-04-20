@@ -1187,12 +1187,29 @@ function RD(key,dict) { //Reverse Dictionary
 for (var i=0;i<dict.length;i++){
 if (dict[i].value==key){return dict[i].text}
 }
+return key;
 }
 
 //For Lexicon.html, use this to turn a word into an entry
 function word2html(word){
     outS='<div class="">';
-    outS+=word.POS+","+word.DictForm+","+word.Transliteration+","+word.Translation+","+word.SpecialTags+","+word.LinkedTo+","+word.Mnemonic+","+word.Chapter+","+word.DifficultyPreset+","+word.Type+","+word.Subtype+","+word.Case_+","+word.Num+","+word.Gender+","+word.Person+","+word.Tense+","+word.Voice+","+word.Mood+","+word.points
+    outS+=RD(word.POS,A_POS)+","
+    +word.DictForm+","
+    +word.Transliteration+","
+    +word.Translation+","
+    +word.SpecialTags+","
+    +word.LinkedTo+","
+    +word.Mnemonic+","
+    +RD(word.Chapter,A_Chapter)+","
+    +RD(word.Type,get_Type(word.POS))+","
+    +word.Subtype+","
+    +RD(word.Case_,A_Case)+","
+    +RD(word.Num,A_Number)+","
+    +RD(word.Gender,A_Gender)+","
+    +word.Person+","
+    +RD(word.Tense,A_Tense)+","
+    +RD(word.Voice,A_Voice)+","
+    +RD(word.Mood,A_Mood);
     outS+='</div>'
     return outS;
 }
