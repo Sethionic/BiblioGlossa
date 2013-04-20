@@ -375,6 +375,7 @@ function JSON_stringify(s, emit_unicode) {
 
 /*-----------------------Population-------------------------------*/
 function initLexicon(file) {
+  console.log('initLexicon(\''+file+'\')')
   var Name = "Main_Lexicon";
  // var phrase2 = document.getElementById('phrase-2').value;
   	var reader = $.get(file,function(inData){
@@ -731,6 +732,7 @@ function hotkeyEnable() {
 }
 
 function init() {
+  console.log("init()");
   WORDLISTMGR = new WordListMGR('wordlistmgr');
   //if wordlistmgr is empty it could be first run or need to be migrated
   if (WORDLISTMGR.length() <= 0) {
@@ -774,7 +776,7 @@ function migrationCheck() {
         WORDLISTMGR = new WordListMGR('wordlistmgr');
         
         //copy wordlist to new format
-        var key = 'wordlist-'+makeKey();
+        var key = 'Lexicon-'+makeKey();
         localStorage[key] = wordlist;
         
         //set the name
@@ -1072,19 +1074,20 @@ function updateDisplay(opts) {
         // set help text for first run.
         //navHide();
         //hide edit/del options when there are 0 words
-        setMsg('no words in this wordlist, click here to add', function () {add();});
-        optionHide();
-        document.getElementById('main').innerHTML = 'Click here to toggle';
-        document.getElementById('main-alt').innerHTML = 'Now add some';
+        //setMsg('no words in this wordlist, click here to add', function () {add();});
+        initLexicon('data/Lexicon.csv')
+        //optionHide();
+        //document.getElementById('main').innerHTML = 'Click here to toggle';
+        //document.getElementById('main-alt').innerHTML = 'Now add some';
         //document.getElementById('button-add').focus();
-        setStats('0 words');
-        show('word-container');
+        //setStats('0 words');
+        //show('word-container');
     } else {
         //navShow();
         hide('msg-container');
-        optionShow();
-        document.getElementById('main').innerHTML = word.phrase1;
-        document.getElementById('main-alt').innerHTML = encodeURI(word.phrase2);
+        //optionShow();
+        //document.getElementById('main').innerHTML = word.phrase1;
+        //document.getElementById('main-alt').innerHTML = encodeURI(word.phrase2);
         //document.getElementById('meter').innerHTML = word.points;
         $('#key').value = word.key;
         
@@ -1127,6 +1130,7 @@ function updateConsole_dev(opts) {
         console.log( 'Click here to toggle'+'Now add some' );
         //document.getElementById('button-add').focus();
         setStats('0 words');
+        initLexicon('data/Lexicon.csv')
         //show('word-container');
     } else {
         //navShow();
@@ -1169,12 +1173,28 @@ function testInit_dev() {
 }
 
 function filter_create_deck(name,params) {
-for (var i=0;i<0;i++){}
+    $('#FilterOutput').empty()
+    var WL=WORDLISTMGR.wordlist_at_index(0)
+    for (var i=0;i<WL.length();i++){
+        //If conditions
+        html2add=word2html(WORDLISTMGR.active().current())
+        $('#FilterOutput').append(html2add)
+        next()
+    }
+}
+
+function RD(key,dict) { //Reverse Dictionary
+for (var i=0;i<dict.length;i++){
+if (dict[i].value==key){return dict[i].text}
+}
 }
 
 //For Lexicon.html, use this to turn a word into an entry
 function word2html(word){
-    word.
+    outS='<div class="">';
+    outS+=word.POS+","+word.DictForm+","+word.Transliteration+","+word.Translation+","+word.SpecialTags+","+word.LinkedTo+","+word.Mnemonic+","+word.Chapter+","+word.DifficultyPreset+","+word.Type+","+word.Subtype+","+word.Case_+","+word.Num+","+word.Gender+","+word.Person+","+word.Tense+","+word.Voice+","+word.Mood+","+word.points
+    outS+='</div>'
+    return outS;
 }
 /*
         Word Attributes:

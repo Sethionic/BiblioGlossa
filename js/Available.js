@@ -144,7 +144,6 @@ default: //If Verb or otherwise
 f(A_Type)
 }
 
-
 function loadSel(name,data) { //Load a select tag "item" with array "data"
     var o = null, i = 0;
     var selBox = name;
@@ -156,19 +155,22 @@ function loadSel(name,data) { //Load a select tag "item" with array "data"
 }
 
 //This enumerates selected options
-//ITEM=selPOS;outS="{"+ITEM.name+"{";for (var i=0;i<ITEM.selectedOptions.length;i++){outS+=ITEM.selectedOptions[i].value+","};outS+="}}"
-
+function CLSummary(ITEM){
+    outS="{"+ITEM.name+"{";for (var i=0;i<ITEM.selectedOptions.length;i++){outS+=ITEM.selectedOptions[i].value+","};outS+="}}";
+    return outS;
+}
 
 function dev_UpdateSummary(name) {
+    console.log("dev_UpdateSummary()")
     var outS = '';
-    var x=document.getElementById(name);
+    x=[$('#selChapter'),
+    $('#selPOS'),
+    $('#selCase'),
+    $('#selMood'),
+    $('#selGender')];
     for (var i=0;i<x.length;i++){
-        var temp=x.elements[i].value
-        outS+=temp=x.elements[i].name+"["
-        for (var j=0;j<temp.length;j++){
-            outS+=$("#"+x.elements[i].name+":selected").val()
-        }
-        outS+="],"
+        temp=CLSummary(x[i])
+        outS+=x[i].name+"["+temp+"],"
     }
     return outS;
 }

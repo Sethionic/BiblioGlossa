@@ -21,7 +21,6 @@
 
     -->
     </style>
-
         
         <script src="js/vendor/jquery-1.8.3/jquery-1.8.3.js"></script>
         <script src="js/vendor/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
@@ -31,7 +30,12 @@
         <script src="js/ui.dropdownchecklist-1.4-min.js"></script>
         <script src="js/modernizr.js"></script>
         <script src="js/Lexicon.js"></script>
-        <title>Test</title>
+        <title>Test 3</title>
+        
+    <script>
+        $(document).ready(function(){mainRunner()});
+    </script>
+
     </head>
 
     <body>
@@ -48,9 +52,27 @@
             <h3>Lexicon Test</h3>
 
             <form id='FiltersForm' action="" onSubmit="">
-            <button form='FiltersForm' type="button" onclick="console.log(dev_UpdateSummary('Filters'))">Filter</button>
+            <button form='FiltersForm' type="button" onclick="filter_create_deck('LexiconSearch',dev_UpdateSummary($('#FiltersForm')))">Filter</button>
             <output type="text" id='devOut'></output>
             </form>
+            
+            <div id="msg-container" style="display:none">
+                <span id="msg" onclick="msgClose()"></span>
+            </div>
+            
+            <div id="conf" style="display:none">
+                <span id="conf-msg"></span>
+                <button id="conf-yes" onclick="">Yes</button>
+                <button id="conf-no" onclick="">No</button>
+            </div><!-- end conf -->
+            
+            <div id="options-container">
+                <div id="button-shuffle" title="shuffle" class="button" onclick="shuffle()"></div>
+                <div id="options">
+                    <div id="stats">0 / 0</div>
+                    <div id="button-options" class="button" onclick="options()">options</div>
+                </div>
+            </div>
             
             <div id="FilterSet" class="selHolder">
             <div class='Word_Filter'>
