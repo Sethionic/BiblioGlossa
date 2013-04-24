@@ -1338,11 +1338,16 @@ function word2html(word){
 
 function wordbox(word){
 	output='<div class="lexWordBox">\
-        <p>'+word.DictForm+'</p>\
-        <p>"'+word.Transliteration+'"</p>\
-        <p>'+word.Translation+'</p>\
-        <span>'+RD(word.POS, A_POS)+'</span><span> c,o,d,e </span><span>Chapter '+word.Chapter+'</span>\
-    </div>' 
+        <span>'+word.DictForm+'</span><br />\
+        <span>"'+word.Transliteration+'"</span><br />\
+        <span>'+word.Translation+'</span><br />\
+        <span>'+RD(word.POS, A_POS)+'</span>\
+        <span> c,o,d,e </span><br />\
+        <span>Chapter '+word.Chapter+'</span>'
+		if(word.SpecialTags != ""){
+			output+="<br /><span>"+word.SpecialTags+"</span>"
+		}
+    output+='</div>' 
 	return output;
 }
 
