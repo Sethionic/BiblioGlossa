@@ -12,6 +12,7 @@ A_Attr = ['Key','POS','DictForm','Transliteration',
     'DifficultyPreset','Type','Subtype','Case_','Num','Gender',
     'Person','Tense','Voice','Mood'];
 
+/*Changed to accomodate onChange function for selectboxes
 A_Chapter= [
 {text: '(All)',value: '0'},
 {text: 'Chapter 3',value: '3'},
@@ -30,6 +31,26 @@ A_Chapter= [
 {text: 'Chapter 16',value: '16'},
 {text: 'Chapter 17',value: '17'},
 {text: 'Chapter 18',value: '18'}];
+*/
+
+A_Chapter= [
+{text: '(All)',value: '0'},
+{text: '3',value: '3'},
+{text: '4',value: '4'},
+{text: '5',value: '5'},
+{text: '6',value: '6'},
+{text: '7',value: '7'},
+{text: '8',value: '8'},
+{text: '9',value: '9'},
+{text: '10',value: '10'},
+{text: '11',value: '11'},
+{text: '12',value: '12'},
+{text: '13',value: '13'},
+{text: '14',value: '14'},
+{text: '15',value: '15'},
+{text: '16',value: '16'},
+{text: '17',value: '17'},
+{text: '18',value: '18'}];
 
 A_POS=[
 {text: '(All)',value: '0'},

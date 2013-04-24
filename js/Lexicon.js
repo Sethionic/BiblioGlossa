@@ -1264,6 +1264,7 @@ function testInit_dev() {
     }
 }
 
+var outMode=wordbox;
 function filter_create_deck(name,params) {
     $('#FilterOutput').empty()
     var WL=WORDLISTMGR.wordlist_at_index(0)
@@ -1272,7 +1273,7 @@ function filter_create_deck(name,params) {
         //If conditions
         word=WORDLISTMGR.active().current()
         if (word.match(params)){
-        html2add=word2html(word);
+        html2add=outMode(word);
         $('#FilterOutput').append(html2add);
         numFound++;
         }
@@ -1333,6 +1334,55 @@ function word2html(word){
         word.Mood
         word.points
 */
+
+function wordbox(word){
+	output='<div class="word">\
+				<div class="top">\
+				  <div class="inlineDiv"> \
+					<span class="trans">\
+						  <p>Transliteration: '
+						  +word.Transliteration+
+						  '</p>\
+						  <p>Greek: '
+						  +word.DictForm+
+						  '</p>\
+						  <p>English:' 
+						  +word.Translation+
+						  '</p>\
+					  </span>\
+					</div>\
+				  <div class="inlineDiv">\
+					  <span class="type">\
+						  <p>'+word.POS+'</p>\
+					  </span>\
+				  </div>\
+				</div>\
+				<br />\
+				<div class="bottom">\
+					<div class="inlineDiv">\
+						 <span class="tag">\
+							 <p>Special Tag: </p>\
+						 </span>\
+					</div>\
+					<div class="inlineDiv">\
+						 <span class="tag">\
+							 <p>';
+							 if (word.SpecialTags == "")
+								output+="None"
+							 else 
+								output+= word.SpecialTags
+					output += '</p>\
+						 </span>\
+					</div>\
+					<div class="inlineDiv">\
+						 <span class="tag">\
+							 <p>Chapter '+word.Chapter+'</p>\
+						 </span>\
+					</div>\
+				</div>\
+			</div>' 
+	return output;
+}
 
 function mainRunner(){
     init();
