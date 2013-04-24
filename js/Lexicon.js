@@ -1337,10 +1337,10 @@ function word2html(word){
 
 function wordbox(word){
 	output='<div style="float: left; width: 200px; height: 200px">\
-        <p>Greek:'+word.DictForm+'</p>\
-        <p>English:'+word.Translation+'</p>\
-        <p>Transliteration:'+word.Transliteration+'</p>\
-        <span>'+RD(word.POS, A_POS)+'</span><span>ABCODE</span><span>Chapter '+word.Chapter+'</span>\
+        <p>'+word.DictForm+'</p>\
+        <p>"'+word.Transliteration+'"</p>\
+        <p>'+word.Translation+'</p>\
+        <span>'+RD(word.POS, A_POS)+'</span><span> c,o,d,e </span><span>Chapter '+word.Chapter+'</span>\
     </div>' 
 	return output;
 }
