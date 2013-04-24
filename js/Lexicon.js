@@ -1278,6 +1278,7 @@ function filter_create_deck(name,params) {
         numFound++;
         }
         next()
+        setStats(numFound+"/"+WL.length());
     }
 }
 
