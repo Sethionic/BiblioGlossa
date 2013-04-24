@@ -1,0 +1,18 @@
+#Creating HTML5 Offline Applications
+http://gazpo.com/2011/08/html5-offline-applications/
+http://diveintohtml5.info/offline.html
+
+#Security
+https://code.google.com/p/html5security/wiki/WebSQLDatabaseSecurity
+
+#HTML5 Databases
+http://cookbooks.adobe.com/post_Store_data_in_the_HTML5_SQLite_database-19115.html
+http://stackoverflow.com/questions/1744522/best-way-to-synchronize-local-html5-db-websql-storage-sqlite-with-a-server-2
+http://blog.darkcrimson.com/2010/05/local-databases/
+https://github.com/cesarjr/crud-offline
+
+#Greek
+http://wiki.logos.com/Morphology_Codes#Robinson_Greek_Morphology
+
+#Linked Combobox
+http://remysharp.com/2007/09/18/auto-populate-multiple-select-boxes/

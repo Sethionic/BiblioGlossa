@@ -4,7 +4,7 @@
  * Derived from Flashwords
  * Renamed Classes: Card -> Word,Deck -> WordList
 \*----------------------------------------------------------------*/
-var lexDebug=1
+
 
 /*----------------------------Word.js-----------------------------*/
 function Word(opts) {
@@ -95,98 +95,6 @@ Word.prototype.save = function () {
   
   console.log(JSON_stringify(o,true));
   console.log(o);
-}
-
-Word.prototype.matchAttr = function (a,b) {
-/*Check to see if this.b (String) matches the array a*/
-//console.log("matchAttr(["+a+"],["+b+"])");
-if (a==null){return false;}
-if ((this.A_Get(b)=="")||(b=="")||(this.A_Get(b)==null)||(this.A_Get(b)=="None")) {return true;} //If there is no attribute to compare a to, return true
-for (var i=0;i<a.length;i++) {
-if (a[i]==this.A_Get(b)) {return true;} //b is a member of a, so return true
-}
-return false; //b is not a member of a, so return false
-}
-
-Word.prototype.match = function (A) {
-/*Check to see if for every array of values in A, *\
-\*word's corresponding attribute is a member      */
-for (var i=0;i<A.length;i++){
-if (!this.matchAttr(A[i][1],A[i][0])){
-        if(lexDebug==1){
-        console.log("Word: "+word2html(this));
-        console.log("Fail: "+this.A_Get(A[i][0])+" is not a member of "+A[i][1]+" ("+A[i][0]+" attr)");
-        }
-        return false;
-    }
-}
-return true;
-}
-
-Word.prototype.A_Get = function (a) {
-switch(a)
-{
-case "Key": 
-    return this.Key;
-    break;
-case "POS": 
-    return this.POS;
-    break;
-case "DictForm": 
-    return this.DictForm;
-    break;
-case "Transliteration": 
-    return this.Transliteration;
-    break;
-case "Translation": 
-    return this.Translation;
-    break;
-case "SpecialTags": 
-    return this.SpecialTags;
-    break;
-case "LinkedTo": 
-    return this.LinkedTo;
-    break;
-case "Mnemonic": 
-    return this.Mnemonic;
-    break;
-case "Chapter": 
-    return this.Chapter;
-    break;
-case "DifficultyPreset": 
-    return this.DifficultyPreset;
-    break;
-case "Type": 
-    return this.Type;
-    break;
-case "Subtype": 
-    return this.Subtype;
-    break;
-case "Case_": 
-    return this.Case_;
-    break;
-case "Num": 
-    return this.Num;
-    break;
-case "Gender": 
-    return this.Gender;
-    break;
-case "Person": 
-    return this.Person;
-    break;
-case "Tense": 
-    return this.Tense;
-    break;
-case "Voice": 
-    return this.Voice;
-    break;
-case "Mood": 
-    return this.Mood;
-    break;
-default:
-    return null;
-    break;
-}
 }
 
 function JSON_stringify(s, emit_unicode) {
@@ -1264,19 +1172,13 @@ function testInit_dev() {
     }
 }
 
-var outMode=wordbox;
 function filter_create_deck(name,params) {
     $('#FilterOutput').empty()
     var WL=WORDLISTMGR.wordlist_at_index(0)
-    var numFound=0
     for (var i=0;i<WL.length();i++){
         //If conditions
-        word=WORDLISTMGR.active().current()
-        if (word.match(params)){
-        html2add=outMode(word);
-        $('#FilterOutput').append(html2add);
-        numFound++;
-        }
+        html2add=word2html(WORDLISTMGR.active().current())
+        $('#FilterOutput').append(html2add)
         next()
     }
 }
@@ -1334,16 +1236,6 @@ function word2html(word){
         word.Mood
         word.points
 */
-
-function wordbox(word){
-	output='<div style="float: left; width: 200px; height: 200px">\
-        <p>Greek:'+word.DictForm+'</p>\
-        <p>English:'+word.Translation+'</p>\
-        <p>Transliteration:'+word.Transliteration+'</p>\
-        <span>'+word.POS+'</span><span>ABCODE</span><span>Chapter '+word.Chapter+'</span>\
-    </div>' 
-	return output;
-}
 
 function mainRunner(){
     init();

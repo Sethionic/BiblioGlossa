@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html> <!-- manifest="test.cache.manifest">> --!>
+
+    <head>
+        <meta charset='utf-8' />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+        <meta name="description" content="Test" />
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui-1.8.4.custom.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/stylesheet.css">
+    <style type="text/css" media="screen">
+    <!--
+      DIV.selHolder { float: left; border: 2px solid #ccc; padding: 5px; width: 95% ; margin-top: 1%}
+      TEXTAREA { width: 80%;}
+      FIELDSET { border: 1px solid #ccc; padding: 1em; margin: 0; }
+      LEGEND { color: #ccc; font-size: 120%; }
+      LABEL { display: block; margin-top: 10px; } 
+      #SELECT { margin: 10px; width: 200px; }
+      DIV.Word_Filter { float: left; width: 155px;}
+      .inner {max-width: 95%}
+
+    -->
+    </style>
+        
+        <script src="js/vendor/jquery-1.8.3/jquery-1.8.3.js"></script>
+        <script src="js/vendor/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
+        <script src="js/jquery.csv-0.71.js"></script>
+        <script src="js/jquery.json-2.4.js"></script>
+        <script src="js/Available.js"></script>
+        <script src="js/ui.dropdownchecklist-1.4-min.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/Lexicon.js"></script>
+        <title>Test 3</title>
+        
+    <script>
+        $(document).ready(function(){mainRunner()});
+    </script>
+
+    </head>
+
+    <body>
+        <!-- HEADER -->
+        <div id="header_wrap" class="outer">
+            <header class="inner">
+                <h1 id="project_title">Biblioglossa</h1>
+                <h2 id="project_tagline">A Greek language learning webapp</h2>
+            </header>
+        </div>
+        <!-- MAIN CONTENT -->
+        <div id="main_content_wrap" class="outer" data-role="page" style="overflow:auto;padding-bottom:1%">
+            <section id="main_content" class="inner">
+            <h3>Lexicon Test</h3>
+
+            <form id='FiltersForm' action="" onSubmit="">
+            <button form='FiltersForm' type="button" onclick="filter_create_deck('LexiconSearch',dev_UpdateSummary($('#FiltersForm')))">Filter</button>
+            <output type="text" id='devOut'></output>
+            </form>
+            
+            <div id="msg-container" style="display:none">
+                <span id="msg" onclick="msgClose()"></span>
+            </div>
+            
+            <div id="conf" style="display:none">
+                <span id="conf-msg"></span>
+                <button id="conf-yes" onclick="">Yes</button>
+                <button id="conf-no" onclick="">No</button>
+            </div><!-- end conf -->
+            
+            <div id="options-container">
+                <div id="button-shuffle" title="shuffle" class="button" onclick="shuffle()"></div>
+                <div id="options">
+                    <div id="stats">0 / 0</div>
+                    <div id="button-options" class="button" onclick="options()">options</div>
+                </div>
+            </div>
+            
+            <div id="FilterSet" class="selHolder">
+            <div class='Word_Filter'>
+            <label for="selChapter" >Chapter:</label>
+            <select multiple id='selChapter' name='Chapter' form='FiltersForm'></select>
+            </div>
+            <div class='Word_Filter'>
+            <label for="selPos" >Part of Speech:</label>
+            <select multiple id='selPOS' name='POS' form='FiltersForm'></select>
+            </div>
+            <div class='Word_Filter'>
+            <label for="selCase" >Case:</label>
+            <select multiple id='selCase' name='Case' form='FiltersForm'></select>
+            </div>
+            <div class='Word_Filter'>
+            <label for="selMood" >Mood:</label>
+            <select multiple id='selMood' name='Mood' form='FiltersForm'></select>
+            </div>
+            <div class='Word_Filter'>
+            <label for="selGender" >Gender:</label>
+            <select multiple id='selGender' name='Gender' form='FiltersForm'></select>
+            </div>
+            
+            <script type="text/javascript">
+            //$(document).ready(function {
+            loadSel($('#selChapter'),A_Chapter);
+            loadSel($('#selPOS'),A_POS);
+            loadSel($('#selCase'),A_Case);
+            loadSel($('#selMood'),A_Mood);
+            loadSel($('#selGender'),A_Gender);
+            //});
+            </script>
+            </div>
+            <div id="FilterOutput" class="selHolder"></div>
+
+        </div>
+
+        <!-- FOOTER  -->
+        <div id="footer_wrap" class="outer">
+            <footer class="inner">
+            <p class="copyright">Biblioglossa maintained by <a href="https://github.com/Sethionic">Sethionic</a></p>
+            <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        </footer>
+        </div>
+        <!--<script src="js/test.js"></script>--!>
+        <script src="js/indbtest.js"></script>
+    </body>
+</html>

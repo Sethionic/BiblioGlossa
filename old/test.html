@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html><!-- manifest="test.cache.manifest">>--!>
+
+  <head>
+	<meta charset='utf-8' />
+	<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+	<meta name="description" content="Test" />
+
+	<link rel="stylesheet" type="text/css" media="screen" href="css/stylesheet.css">
+    <script src="js/vendor/jquery-1.8.3/jquery-1.8.3.js"></script>
+    <script src="js/vendor/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
+	<script src="js/jquery.csv-0.71.js"></script>
+    <script src="js/jquery.json-2.4.js"></script>
+    <script src="js/indbtest.js"></script>
+
+	<title>Test</title>
+  </head>
+
+  <body>
+	  <!-- HEADER -->
+	<div id="header_wrap" class="outer">
+		<header class="inner">
+
+		  <h1 id="project_title">Biblioglossa</h1>
+		  <h2 id="project_tagline">A Greek language learning webapp</h2>
+
+		</header>
+	</div>
+<!-- MAIN CONTENT -->
+	<div id="main_content_wrap" class="outer" data-role="page">
+	  <section id="main_content" class="inner">
+		<h3>Lexicon</h3><input id="key" type="hidden" />
+
+<p>Lexicon: Allow the user to get a listing of all words within the database that fit their search constraints</p>
+<a href="#" id="btnAdd" class="button ui-btn-right" data-theme="b" data-icon="plus" onClick="prepareAdd()">Add</a>
+	<div data-role="content">
+	  <form>
+		<label for="Name">Name</label>
+		<input type="text" id="name">
+
+		<label for="Phone">Phone</label>
+		<input type="text" id="phone">
+
+		<input type="hidden" id="id"/>
+
+		<div class="ui-body-b ui-body">
+		  <button id="btnSave" type="button" data-inline="true" data-icon="refresh">Save</button>
+		  <button id="btnCancel" type="button" data-inline="true" data-icon="plus" data-theme="c" onClick="cancelAction()">Cancel</button>
+		  <button id="btnShow" type="button" data-inline="true" data-icon="plus" data-theme="c" onClick="showRecords()">Show</button>
+		</div>
+	  </form>
+	  
+	  <p>Enter a zip code to find its city:</p>
+      Zipcode: <input onchange="displayCity(this.value)"></input>
+      City: <output id="city"></output>
+      </div>
+      <div>
+      <p>Enter a Lexicon Key:</p>
+      City: <input onchange="displayPOS(this.value)"></input>
+      <div id="GLexicon"></div>
+      </div>
+      <p><i>This example is only known to work in Firefox 4 and Chrome 11.</i></p>
+      <p><i>Your first query may take a very long time to complete.</i></p>
+      <p><i>You may need to start Chrome with --unlimited-quota-for-indexeddb</i></p>
+	  
+	  <p>Test 3</p>
+	  <div id=inputs class=clearfix>
+          <input type=file id=files name=files[] multiple />
+          <button id="CSVShow" type="button" data-inline="true" data-icon="plus" data-theme="c" onClick="printTable('data/Lexicon.csv')">Show</button>
+          <button id="CSVShow2" type="button" data-inline="true" data-icon="plus" data-theme="c" onClick="printTable('data/Lexicon.csv')">Show</button>
+      </div>
+	  <!--<script type="text/javascript">
+	        function printTable(file) {
+    //$('#list').append(file+'<br>');
+    var reader = $.get(file,function(inData){
+      var csv = inData;
+      //$('#list').append(csv+'<br>'); //This will print the file
+      var data = $.csv.toArrays(csv);
+      var html = '';
+      for(var row in data) {
+        html += '<tr><br />';
+        for(var item in data[row]) {
+          html += '<td>' + data[row][item] + '</td>\r\n';
+        }
+        html += '</tr><br/>';
+      }
+      $('#contents').append(html);
+      //$('#list').append(html);
+    });
+    reader.onerror = function(){ alert('Unable to read ' + file.fileName); };
+  }
+	  </script>--!>
+	  <hr />
+      <output id=list>
+      </output>
+      <hr />
+      <table id=contents style="width:100%; height:400px;" border>
+      </table>
+	</div>
+
+	</div>
+
+	<!-- FOOTER	 -->
+	<div id="footer_wrap" class="outer">
+	  <footer class="inner">
+		<p class="copyright">Biblioglossa maintained by <a href="https://github.com/Sethionic">Sethionic</a></p>
+		<p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+	  </footer>
+	</div>
+  <!--<script src="js/test.js"></script>--!>
+  
+</body>
+</html>
