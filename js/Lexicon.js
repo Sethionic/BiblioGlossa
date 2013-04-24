@@ -1340,7 +1340,7 @@ function wordbox(word){
         <p>Greek:'+word.DictForm+'</p>\
         <p>English:'+word.Translation+'</p>\
         <p>Transliteration:'+word.Transliteration+'</p>\
-        <span>'+word.POS+'</span><span>ABCODE</span><span>Chapter '+word.Chapter+'</span>\
+        <span>'+RD(word.POS, A_POS)+'</span><span>ABCODE</span><span>Chapter '+word.Chapter+'</span>\
     </div>' 
 	return output;
 }
