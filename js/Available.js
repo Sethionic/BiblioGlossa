@@ -7,6 +7,10 @@ Potential Improvements:
 It is possible to make the data source a .json file rather than straight arrays here; see:
 http://stackoverflow.com/questions/815103/jquery-best-practice-to-populate-drop-down
 \*--------------------------------------------------------------*/
+A_Attr = ['Key','POS','DictForm','Transliteration',
+    'Translation','SpecialTags','LinkedTo','Mnemonic','Chapter',
+    'DifficultyPreset','Type','Subtype','Case_','Num','Gender',
+    'Person','Tense','Voice','Mood'];
 
 A_Chapter= [
 {text: '(All)',value: '0'},
@@ -151,27 +155,33 @@ function loadSel(name,data) { //Load a select tag "item" with array "data"
     //Probably need to spell it out better, step by step
         selBox.append( $("<option />").text(data[i].text).val(data[i].value) )
     }
+    $(selBox).children()[0].selected=true;
     $(selBox).dropdownchecklist({emptyText: "Please select ..." , width: 150 , firstItemChecksAll: true , maxDropHeight: 150 });// { width: 150 } );
+    
 }
 
-//This enumerates selected options
-function CLSummary(ITEM){
-    outS="{"+ITEM.name+"{";for (var i=0;i<ITEM.selectedOptions.length;i++){outS+=ITEM.selectedOptions[i].value+","};outS+="}}";
+//Depreciated -- This enumerates selected options
+/*function CLSummary(item){
+    console.log("CLSummary("+item+")")
+    ITEM=$(item)
+    var outS=ITEM.val()|[];
+    console.log(ITEM.attr('name')+"="+outS);
+    //outS="{"+ITEM.name+"{";for (var i=0;i<ITEM.selectedOptions.length;i++){outS+=ITEM.selectedOptions[i].value+","};outS+="}}";
     return outS;
-}
+}*/
 
-function dev_UpdateSummary(name) {
-    return null;//Fix later, short-circuit to test filter button
+function dev_UpdateSummary(name,word) {
+    //return null;//Fix later, short-circuit to test filter button
     console.log("dev_UpdateSummary()")
-    var outS = '';
-    x=[$('#selChapter'),
-    $('#selPOS'),
-    $('#selCase'),
-    $('#selMood'),
-    $('#selGender')];
+    var outS = [];
+    var x=Array('#selChapter',
+    '#selPOS',
+    '#selCase',
+    '#selMood',
+    '#selGender');
+    //Add a method to Word to check for a match in a supplied array
     for (var i=0;i<x.length;i++){
-        temp=CLSummary(x[i])
-        outS+=x[i].name+"["+temp+"],"
+        outS[i]=[$(x[i]).attr("name"),$(x[i]).val()]
     }
     return outS;
 }
