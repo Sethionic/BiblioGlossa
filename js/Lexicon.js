@@ -1336,7 +1336,7 @@ function word2html(word){
 */
 
 function wordbox(word){
-	output='<div style="float: left; width: 200px; height: 200px">\
+	output='<div class="lexWordBox">\
         <p>'+word.DictForm+'</p>\
         <p>"'+word.Transliteration+'"</p>\
         <p>'+word.Translation+'</p>\
