@@ -1342,7 +1342,7 @@ function wordbox(word){
         <span>"'+word.Transliteration+'"</span><br />\
         <span id="englishword">'+word.Translation+'</span><br />\
         <span>'+RD(word.POS, A_POS)+'</span>\
-        <span> c,o,d,e </span><br />\
+        <span> (c,o,d,e) </span><br />\
         <span>Chapter '+word.Chapter+'</span>'
 		if(word.SpecialTags != ""){
 			output+="<br /><span id='sptag'>"+word.SpecialTags+"</span>"
