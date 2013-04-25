@@ -92,6 +92,10 @@
             <label for="selGender" >Gender:</label>
             <select multiple id='selGender' name='Gender' form='FiltersForm'></select>
             </div>
+            <div class='Word_Filter'>
+            <label for="selTense" >Tense:</label>
+            <select multiple id='selTense' name='Tense' form='FiltersForm'></select>
+            </div>            
             <div id="options-container" form ='FiltersForm'>
                 <div id="button-shuffle" title="shuffle" class="button" onclick="shuffle()"></div>
                 <div id="options">
@@ -106,6 +110,7 @@
             loadSel($('#selCase'),A_Case);
             loadSel($('#selMood'),A_Mood);
             loadSel($('#selGender'),A_Gender);
+            loadSel($('#selTense'),A_Tense);
             //});
             </script>
             </div>
