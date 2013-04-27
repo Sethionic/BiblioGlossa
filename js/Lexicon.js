@@ -189,6 +189,43 @@ default:
 }
 }
 
+Word.prototype.RobCode = function () {
+switch (this.POS){
+case "V":
+    if (this.Mood=="P"){
+    return (this.POS+"-"+this.Tense+this.Voice+this.Mood+"-"+this.Case+this.Num+this.Gender);
+    }
+    else {
+    return (this.POS+"-"+this.Tense+this.Voice+this.Mood+"-"+this.Person+this.Num);
+    }
+    break;
+case "A":
+case "R":
+case "N":
+case "T":
+    return (this.POS+"-"+this.Case_+this.Num+this.Gender)
+    break;
+case "P":
+    return (this.POS+"-"+this.Person+this.Case_+this.Num)
+    break;
+case "C":
+    return ("CONJ");
+    break;
+case "P":
+    return ("PREP");
+    break;
+case "L":
+    return ("PRT-"+this.Type);
+    break;
+case "B":
+    return ("ADV-"+this.Type);
+    break;
+default:
+    return ("MAKE CODE FOR "+RD(this.POS,A_POS));
+    break;
+}
+}
+
 function JSON_stringify(s, emit_unicode) {
    var json = JSON.stringify(s);
    return emit_unicode ? json : json.replace(/[\u007f-\uffff]/g,
@@ -1342,7 +1379,7 @@ function wordbox(word){
         <span>"'+word.Transliteration+'"</span><br />\
         <span id="englishword">'+word.Translation+'</span><br />\
         <span>'+RD(word.POS, A_POS)+'</span>\
-        <span> (c,o,d,e) </span><br />\
+        <span> '+word.RobCode()+' </span><br />\
         <span>Chapter '+word.Chapter+'</span>'
 		if(word.SpecialTags != ""){
 			output+="<br /><span id='sptag'>"+word.SpecialTags+"</span>"
