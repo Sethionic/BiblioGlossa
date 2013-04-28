@@ -1,10 +1,11 @@
 /*----------------------------------------------------------------*\
  * Lexicon Database
  *
- * Derived from Flashwords
+ * Derived from Flashcards
  * Renamed Classes: Card -> Word,Deck -> WordList
 \*----------------------------------------------------------------*/
 var lexDebug=1
+var LexMode=1
 
 /*----------------------------Word.js-----------------------------*/
 function Word(opts) {
@@ -639,7 +640,7 @@ function add() {
   hide('option-container');
   hotkeyDisable();
   $('#key').value = '';
-  //document.getElementById('button-save').onclick = save;
+  if (LexMode==2){document.getElementById('button-save').onclick = save;}
   resetDisplay();
   show('modal-container');
   show('phrase-form');
@@ -660,7 +661,6 @@ function cancel() {
 //do action for a given hotkey
 function checkHotkey(e) {
   var key = (window.event) ? event : e;
-  //alert(key.keyCode);
   switch(key.keyCode) {
     case 32:
       flip();
@@ -780,8 +780,8 @@ function edit() {
   var word = WORDLISTMGR.active().current();
   hotkeyDisable();
   resetDisplay();
-  document.getElementById('phrase-1').value = word.phrase1;
-  document.getElementById('phrase-2').value = word.phrase2;
+  document.getElementById('phrase-1').value = word.DictForm;
+  document.getElementById('phrase-2').value = word.Translation;
   $('#key').value = word.key;
   show('phrase-form');
   document.getElementById('phrase-1').focus();
@@ -793,7 +793,7 @@ function export_csv() {
     d.document.write('<html><textarea style="margin-top: 2px; margin-bottom: 2px; height: 287px; margin-left: 2px; margin-right: 2px; width: 462px; ">');
     for (var i=0 ; i<WORDLISTMGR.active().length() ; i++) {
         var c = WORDLISTMGR.active().current();
-        d.document.write('"'+c.phrase1+'","'+c.phrase2+'"\n');
+        d.document.write('"'+c.DictForm+'","'+c.Translation+'"\n');
         WORDLISTMGR.active().next();
     }
     d.document.write('</textarea></html>');
@@ -948,6 +948,7 @@ function navHide() {
 function next() {
     hotkeyDisable();
     WORDLISTMGR.active().next();
+    if (LexMode==2){
     if (WORDLISTMGR.mode_animations) {
         if (isVisible('main')) {
             $('#main').hide("slide", { direction: "left" }, 300, function () {updateDisplay()});
@@ -958,9 +959,11 @@ function next() {
         hide('main');
         updateDisplay();
     }
-    updateDisplay();
+    updateDisplay();}
 }
-next=function(){hotkeyDisable();WORDLISTMGR.active().next();} //Ignore GUI
+
+//next=function(){hotkeyDisable();WORDLISTMGR.active().next();} //Ignore GUI
+
 
 //hide edit/del options
 function optionHide() {
@@ -1012,6 +1015,7 @@ function pointUp() {
 function prev() {
     hotkeyDisable();
     WORDLISTMGR.active().prev();
+    if (LexMode==2){
     if (WORDLISTMGR.mode_animations) {
         if (isVisible('main')) {
             $('#main').hide("slide", { direction: "right" }, 200, function () {updateDisplay({'direction':'left'})});
@@ -1021,9 +1025,9 @@ function prev() {
     } else {
         hide('main');
         updateDisplay({'direction':'left'});
-    }
+    }}
 }
-prev=function () {hotkeyDisable();WORDLISTMGR.active().prev();} //Ignoring GUI
+//prev=function () {hotkeyDisable();WORDLISTMGR.active().prev();} //Ignoring GUI
 
 function reset() {
   document.getElementById('conf-msg').innerHTML = 'Are you sure you want to reset everything?';
@@ -1125,6 +1129,7 @@ function saveWordListCancel() {
 }
 
 function show(id) {
+  console.log("show("+id+")");
   document.getElementById(id).style.display = '';
 }
 
@@ -1193,6 +1198,7 @@ function toggleOptionsShow() {
 
 //set display for the current word
 function updateDisplay(opts) {
+if (LexMode==2){
     if (opts == undefined) {
         opts = {'direction':'right'};
     }
@@ -1212,12 +1218,14 @@ function updateDisplay(opts) {
         //setStats('0 words');
         //show('word-container');
     } else {
-        //navShow();
+        if (LexMode==2){navShow();}
         hide('msg-container');
-        //optionShow();
-        //document.getElementById('main').innerHTML = word.phrase1;
-        //document.getElementById('main-alt').innerHTML = encodeURI(word.phrase2);
-        //document.getElementById('meter').innerHTML = word.points;
+        if (LexMode==2){
+        optionShow();
+        document.getElementById('main').innerHTML = word.DictForm;
+        document.getElementById('main-alt').innerHTML = encodeURI(word.Translation);
+        document.getElementById('meter').innerHTML = word.points;
+        }
         $('#key').value = word.key;
         
         setStats((WORDLISTMGR.active().index+1) + ' / ' + WORDLISTMGR.active().length());
@@ -1241,42 +1249,27 @@ function updateDisplay(opts) {
     updateOptions();
     hotkeyEnable();
 }
-updateDisplay=updateConsole_dev //This ignores the flashcard GUI
-
-function updateConsole_dev(opts) {
+else{
     if (opts == undefined) {
         opts = {'direction':'right'};
     }
-    //flipReset();
-    //hide('conf');
     var word = WORDLISTMGR.active().current();
     if (!word) {
         // set help text for first run.
-        //navHide();
-        //hide edit/del options when there are 0 words
         setMsg('no words in this wordlist, click here to add', function () {add();});
-        //optionHide();
         console.log( 'Click here to toggle'+'Now add some' );
-        //document.getElementById('button-add').focus();
         setStats('0 words');
         initLexicon('data/Lexicon.csv')
-        //show('word-container');
     } else {
-        //navShow();
-        //hide('msg-container');
-        //optionShow();
         console.log(word.Key+': '+word.DictForm);
-        //document.getElementById('main-alt').innerHTML = encodeURI(word.phrase2);
-        //document.getElementById('meter').innerHTML = word.points;
         $('#key').value = word.key;
-        
         console.log("Stats: "+(WORDLISTMGR.active().index+1) + ' / ' + WORDLISTMGR.active().length());
     }
-    
-    //updateOptions();
     hotkeyEnable();
 }
+}
 
+//updateDisplay=updateConsole_dev //This ignores the flashcard GUI
 
 //update the state of the options to show current state
 function updateOptions() {

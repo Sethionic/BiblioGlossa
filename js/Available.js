@@ -174,7 +174,7 @@ function loadSel(name,data) { //Load a select tag "item" with array "data"
     var selBox = name;
     for (var i=0; i < data.length; i++) {
     //Probably need to spell it out better, step by step
-		console.log(data[i].text + " " + data[i].value)
+		//console.log(data[i].text + " " + data[i].value)
         selBox.append( $("<option />").text(data[i].text).val(data[i].value) )
     }
     $(selBox).children()[0].selected=true;
