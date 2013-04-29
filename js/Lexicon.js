@@ -1295,6 +1295,8 @@ function testInit_dev() {
     }
 }
 
+function create_or_replace(){}
+
 var outMode=wordbox;
 function filter_create_deck(name,params) {
     $('#FilterOutput').empty()
