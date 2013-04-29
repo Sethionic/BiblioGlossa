@@ -926,20 +926,20 @@ function msgClose() {
 }
 
 function navShow(){
-  show('bottom-panel');
-  show('button-delete');
-  show('button-edit');
-  show('meter');
+  //show('bottom-panel');
+  //show('button-delete');
+  //show('button-edit');
+  //show('meter');
   show('options-container');
   show('stats');
 }
 
 function navHide() {
   hide('add-another');
-  hide('bottom-panel');
-  hide('button-delete');
-  hide('button-edit');
-  hide('meter');
+  //hide('bottom-panel');
+  //hide('button-delete');
+  //hide('button-edit');
+  //hide('meter');
   hide('options-container');
   hide('stats');
 }
@@ -959,7 +959,8 @@ function next() {
         hide('main');
         updateDisplay();
     }
-    updateDisplay();}
+    //updateDisplay();
+    }
 }
 
 //next=function(){hotkeyDisable();WORDLISTMGR.active().next();} //Ignore GUI
@@ -1223,8 +1224,8 @@ if (LexMode==2){
         if (LexMode==2){
         optionShow();
         document.getElementById('main').innerHTML = word.DictForm;
-        document.getElementById('main-alt').innerHTML = encodeURI(word.Translation);
-        document.getElementById('meter').innerHTML = word.points;
+        document.getElementById('main-alt').innerHTML = (word.Translation);
+        //document.getElementById('meter').innerHTML = word.points;
         }
         $('#key').value = word.key;
         
