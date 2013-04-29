@@ -1130,7 +1130,7 @@ function saveWordListCancel() {
 }
 
 function show(id) {
-  console.log("show("+id+")");
+  //console.log("show("+id+")");
   document.getElementById(id).style.display = '';
 }
 
