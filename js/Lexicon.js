@@ -1298,6 +1298,7 @@ function testInit_dev() {
 function create_or_replace(name){
     //See if name exists
         //If so, wipe it
+        //If not, create it
 }
 
 var outMode=wordbox;
@@ -1378,7 +1379,7 @@ function wordbox(word){
         <span>"'+word.Transliteration+'"</span><br />\
         <span id="englishword">'+word.Translation+'</span><br />\
         <span>'+RD(word.POS, A_POS)+'</span>\
-        <span> '+word.RobCode()+' </span><br />\
+        <span font-style="italic"> ('+word.RobCode()+') </span><br />\
         <span>Chapter '+word.Chapter+'</span>'
 		if(word.SpecialTags != ""){
 			output+="<br /><span id='sptag'>"+word.SpecialTags+"</span>"

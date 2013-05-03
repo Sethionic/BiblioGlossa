@@ -330,7 +330,7 @@ a:link, a:visited {
     right:2px;
     width:24px;
     height:24px;
-    background-image:url('close.png');
+    background-image:url('../img/close.png');
 }
 
 #meter {
