@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html><!-- manifest="cache.manifest">--!>
+<html><!-- manifest="flashcard.cache.manifest">--!>
     <head>
         <title>Flashcards</title>
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0" >
-
+		
         <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <link rel="apple-touch-icon-precomposed" href="icon57.png" />
 
-        <link rel="stylesheet" href="css/fcardmain_Lex.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="css/fcardmain.css" type="text/css" media="screen" charset="utf-8" />
         <!--[if !IE]>-->
-            <link media="only screen and (max-device-width: 480px)" href="css/iphone_Lex.css" type="text/css" rel="stylesheet" />
+            <link media="only screen and (max-device-width: 480px)" href="css/iphone.css" type="text/css" rel="stylesheet" />
         <!--<![endif]-->
     </head>
     <body>
         <div id="container">
             <div id="main-container">
-                <div id="word-container" onclick="flip()">
+                <div id="card-container" onclick="flip()">
                     <div id="main"></div>
                     <div id="main-alt" style="display:none"></div>
-                </div><!-- word-container -->
+                </div><!-- card-container -->
                 <div style="clear:both"></div>
             </div><!-- main-container -->        
             <div id="modal-container" style="display:none">
@@ -28,54 +29,51 @@
                 <div id="option-container" style="display:none">
                     <div id="option-container-left">
 
-                        <div id="wordlist-container">
+                        <div id="deck-container">
                             <div id="exim-container">
                                 <div id="exim-button-container">
-                                    <!--
                                     <div id="button-import" class="button" onclick="eximImport()">import</div>
                                     <div id="button-export" class="button" onclick="eximExport()">export</div>
-                                    --!>
-                                    <div class="button" onclick="optionsClose()">Close</div>
                                 </div>
                                 <div id="exim-import-container" style="display:none">
                                     <input id="import-file" type="file" /> <div id="import-cancel" class="button" onclick="eximImportCancel()">cancel</div>
                                 </div>
                             </div><!-- exim-container -->
-                            <div>WordList</div>
-                            <div id="wordlist-choices">
-                                <select id="wordlist-list" onchange="wordlistSelect(this.options[this.selectedIndex].value)">
+                            <div>Deck</div>
+                            <div id="deck-choices">
+                                <select id="deck-list" onchange="deckSelect(this.options[this.selectedIndex].value)">
                                 </select>
                                 
-                                <div id="wordlist-options">
-                                    <div class="button" onclick="wordlistRename()">Rename</div>
-                                    <div class="button" onclick="wordlistDelete()">Delete</div>
+                                <div id="deck-options">
+                                    <div class="button" onclick="deckRename()">rename</div>
+                                    <div class="button" onclick="deckDelete()">delete</div>
                                 </div>
-                            </div><!-- wordlist-choices -->
+                            </div><!-- deck-choices -->
                             
-                            <div id="wordlist-delete-conf" style="display:none">
-                                <div>Are you sure you want to delete the wordlist "<span id="wordlist-delete-name"></span>" which has <span id="wordlist-delete-count"></span> words?</div>
-                                <div class="button" onclick="delWordListYes()">yes</div>
-                                <div class="button" onclick="saveWordListCancel()">no</div>
+                            <div id="deck-delete-conf" style="display:none">
+                                <div>Are you sure you want to delete the deck "<span id="deck-delete-name"></span>" which has <span id="deck-delete-count"></span> cards?</div>
+                                <div class="button" onclick="delDeckYes()">yes</div>
+                                <div class="button" onclick="saveDeckCancel()">no</div>
                             </div>
                             
-                            <div id="wordlist-form" style="display:none">
+                            <div id="deck-form" style="display:none">
                                 <form action="" onsubmit="return false;">
-                                    <input id="wordlist-key" type="hidden" value="" />
-                                    <input id="wordlist-form-value" type="text" maxlength="16" value="" />
-                                    <button type="submit" style="visibility:hidden" onclick="saveWordList()">save</button>
-                                    <div id="wordlist-form-options">
-                                        <div class="button" onclick="saveWordList()">save</div>
-                                        <div class="button" onclick="saveWordListCancel()">cancel</div>
+                                    <input id="deck-key" type="hidden" value="" />
+                                    <input id="deck-form-value" type="text" maxlength="16" value="" />
+                                    <button type="submit" style="visibility:hidden" onclick="saveDeck()">save</button>
+                                    <div id="deck-form-options">
+                                        <div class="button" onclick="saveDeck()">save</div>
+                                        <div class="button" onclick="saveDeckCancel()">cancel</div>
                                     </div>
                                 </form>
                             </div>
-                        </div><!-- wordlist-container -->
+                        </div><!-- deck-container -->
                     </div><!-- option-container-left -->
                     
                     <div id="option-container-right">
                         <div id="option-crud">
-                            <div>Word options</div>
-                            <div id="word-options">
+                            <div>Card options</div>
+                            <div id="card-options">
                                 <div id="option-add" class="button" onclick="add()">add</div>
                                 <div id="option-edit" class="button" onclick="edit()">edit</div>
                                 <div id="option-del" class="button" onclick="del()">delete</div>
@@ -92,16 +90,18 @@
                 </div><!-- option-container -->
                 <div id="phrase-form" style="display:none">
                     <form action="" onsubmit="return false;">
-                        <label for="phrase-1">Phrase 1:</label>
-                        <input id="phrase-1" type="text" autocorrect="off" size="22" />
+                        <label for="phrase-1" >Sort By:</label>
+                        <select id="phrase-1">
+							<option value="chapter">Chapter</option>
+                        </select>
                         <br />
-                        <label for="phrase-2">Phrase 2:</label>
+                        <label for="phrase-2">Chapter:</label>
                         <input id="phrase-2" type="text" autocorrect="off" size="22" />
                         
                         <input id="key" type="hidden" />
                         
-                        <button id="button-save-keypress" type="submit" style="visibility:hidden" onclick="save()">save</button>
-                        <div id="button-save" class="button" onclick="save()">save</div>
+                        <button id="button-save-keypress" type="submit" style="visibility:hidden" onclick="save_chapt('data/Lexicon.csv')">save</button>
+                        <div id="button-save" class="button" onclick="save_chapt('data/Lexicon.csv')">save</div>
                     </form>
                 </div><!-- phrase-form -->
                 <div id="add-another" style="display:none">
@@ -135,25 +135,26 @@
                 </div>
             </div>
             
-            <span id="credits"><a href="http://chrisfattarsi.com/flashwords">Original flashcard engine by chris fattarsi</a></span>
+            <span id="credits"><a href="http://chrisfattarsi.com/flashcards">chris fattarsi</a></span>
             <span id="version">0.7.2</span>
         </div>
         
         <script src="js/modernizr.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery-ui.min.js"></script>
-        <script src="js/BlobBuilder.min.js"></script>
-        <script src="js/FileSaver.min.js"></script>
-        <!--<script src="word.js" type="text/javascript" charset="utf-8"></script>
-        <script src="wordlist.js" type="text/javascript" charset="utf-8"></script>
-        <script src="wordlistmgr.js" type="text/javascript" charset="utf-8"></script>
-        <script src="controller.js" type="text/javascript" charset="utf-8"></script>
-        --!>
-        <script src="js/Lexicon.js"></script>
-        
+        <script src="js/jquery.min.js"  type="text/javascript" charset="utf-8"></script>
+        <script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/BlobBuilder.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/FileSaver.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/card.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/deck.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/deckmgr.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/controller.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/add_greek.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/jquery.csv-0.71.js" type="text/javascript" charset="utf-8"></script>
+        <script type='text/javascript' src='js/Available.js' charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
+        
             init();
-            LexMode=2;
+            
             //Capture key events
             document.onkeydown = checkHotkey;
             
@@ -168,10 +169,6 @@
           };
 
           setInterval(updateLayout, 750);
-          
-          //Initialize first card
-          WORDLISTMGR.active().next()
-          prev()
         </script>
     </body>
 </html>
