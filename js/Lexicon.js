@@ -1295,7 +1295,10 @@ function testInit_dev() {
     }
 }
 
-function create_or_replace(){}
+function create_or_replace(name){
+    //See if name exists
+        //If so, wipe it
+}
 
 var outMode=wordbox;
 function filter_create_deck(name,params) {
@@ -1304,7 +1307,7 @@ function filter_create_deck(name,params) {
     var numFound=0
     for (var i=0;i<WL.length();i++){
         //If conditions
-        word=WORDLISTMGR.active().current()
+        word=WORDLISTMGR.active().current()//.wordlist_at_index(0)//active().current()
         if (word.match(params)){
         html2add=outMode(word);
         $('#FilterOutput').append(html2add);
