@@ -153,8 +153,8 @@
         <script src="js/Lexicon.js"></script>
         
         <script type="text/javascript" charset="utf-8">
-            init();
             LexMode=2;
+            init();
             //Capture key events
             document.onkeydown = checkHotkey;
             
@@ -171,8 +171,8 @@
           setInterval(updateLayout, 750);
           
           //Initialize first card
-          WORDLISTMGR.active().next()
-          prev()
+          WORDLISTMGR.active().next();
+          //prev();
         </script>
     </body>
 </html>
