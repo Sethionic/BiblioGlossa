@@ -1394,6 +1394,10 @@ function mainRunner(){
     document.onkeydown = checkHotkey;
 }
 
+function filter_to_WL(){
+console.log("filter_to_WL()")
+}
+
 /*
 var localStorage = new Object();
 localStorage.removeItem = function (key) {
