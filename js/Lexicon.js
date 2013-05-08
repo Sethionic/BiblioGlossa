@@ -94,8 +94,10 @@ Word.prototype.save = function () {
   o.Mood = this.Mood;
   localStorage[this.key] = JSON_stringify(o,true)
   
+  if (lexDebug){
   console.log(JSON_stringify(o,true));
   console.log(o);
+  }
 }
 
 Word.prototype.matchAttr = function (a,b) {
@@ -442,7 +444,7 @@ WordListMGR.prototype.wordlist_add = function (key) {
 WordListMGR.prototype.wordlist_delete = function () {
     //this.active().deleteAllWords();//Removed since words are static
     //rm wordlist
-    if (this.active.name=="default"){return}//Safegaurd to keep main WordList alive
+    if (this.active.name=="All Words"){return}//Safegaurd to keep main WordList alive
     localStorage.removeItem(this.active().key);
     this.wordlists.splice(this.index,1);
     this.wordlist_load(0);
@@ -506,7 +508,7 @@ function JSON_stringify(s, emit_unicode) {
 
 /*-----------------------Population-------------------------------*/
 function initLexicon(file) {
-  console.log('initLexicon(\''+file+'\')')
+  if (lexDebug){console.log('initLexicon(\''+file+'\')')}
   var Name = "Main_Lexicon";
  // var phrase2 = document.getElementById('phrase-2').value;
   	var reader = $.get(file,function(inData){
@@ -726,7 +728,7 @@ function wordlistRename() {
 //do add operation if value='add' was passed
 //do nothing if value is blank or current wordlist is already selected
 function wordlistSelect(value) {
-    var current = 'default';
+    var current = 'All Words';
     hide('wordlist-form');
     switch(value) {
         case '':
@@ -863,14 +865,14 @@ function hotkeyEnable() {
 }
 
 function init() {
-  console.log("init()");
+  if (lexDebug){console.log("init()");}
   WORDLISTMGR = new WordListMGR('wordlistmgr');
   //if wordlistmgr is empty it could be first run or need to be migrated
   if (WORDLISTMGR.length() <= 0) {
     //migrationCheck();
     //if still empty, add a default wordlist
     if (WORDLISTMGR.length() <= 0) {
-        var ndx = WORDLISTMGR.createWordList('default');
+        var ndx = WORDLISTMGR.createWordList('All Words');
         WORDLISTMGR.wordlist_load(ndx);
     }
   }
@@ -912,7 +914,7 @@ function migrationCheck() {
         
         //set the name
         var d = new WordList(key);
-        d.name = 'default';
+        d.name = 'All Words';
         d.save();
         
         //add to mgr and cleanup
@@ -1259,8 +1261,8 @@ else{
     var word = WORDLISTMGR.active().current();
     if (!word) {
         // set help text for first run.
-        setMsg('no words in this wordlist, click here to add', function () {add();});
-        console.log( 'Click here to toggle'+'Now add some' );
+        //setMsg('no words in this wordlist, click here to add', function () {add();});
+        if (lexDebug){console.log( 'Click here to toggle'+'Now add some' );}
         setStats('0 words');
         initLexicon('data/Lexicon.csv')
     } else {
@@ -1298,8 +1300,8 @@ function testInit_dev() {
 }
 
 function create_or_replace(name){
-    console.log("create_or_replace("+name+")");
-    if ((name=="")||(name=="default")){
+    if (lexDebug){console.log("create_or_replace("+name+")");}
+    if ((name=="")||(name=="All Words")){
     console.log("Invalid WordList name: "+name);
     return;
     }

@@ -195,7 +195,7 @@ function loadSel(name,data) { //Load a select tag "item" with array "data"
 
 function dev_UpdateSummary(name,word) {
     //return null;//Fix later, short-circuit to test filter button
-    console.log("dev_UpdateSummary()")
+    if (lexDebug){console.log("dev_UpdateSummary()")}
     var outS = [];
     var x=Array('#selChapter',
     '#selPOS',
