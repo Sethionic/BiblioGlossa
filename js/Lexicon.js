@@ -566,7 +566,7 @@ function initLexicon(file) {
                 'POS':data[row][1],
                 'DictForm':data[row][2],
                 'Transliteration':data[row][3],
-                'Translation':data[row][4],
+                'Translation':data[row][4].replace(/;/gi,",").replace(/,,/gi,";"),
                 'SpecialTags':data[row][5],
                 'LinkedTo':data[row][6],
                 'Mnemonic':data[row][7],
@@ -582,9 +582,10 @@ function initLexicon(file) {
                 'Voice':data[row][17],
                 'Mood':data[row][18]
 			});
+			if (row>0){//Skip header row
 			word.save();
 			WORDLISTMGR.active().add(word);
-			WORDLISTMGR.active().save();
+			WORDLISTMGR.active().save();}
 			}
 			
 			
@@ -710,9 +711,9 @@ function wordlistListCreate() {
     var elm = document.getElementById('wordlist-list');
     //clear previous entries
     elm.innerHTML = '';
-    //static entries
-    elm.appendChild(createOptionNode('add', 'Add new'));
-    elm.appendChild(createOptionNode('', '----------------'));
+    //static entries - Removed for our purposes
+    //elm.appendChild(createOptionNode('add', 'Add new'));
+    //elm.appendChild(createOptionNode('', '----------------'));
     
     //dynamic entries
     for (var i=0 ; i<WORDLISTMGR.length() ; i++) {
