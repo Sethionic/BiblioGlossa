@@ -202,7 +202,10 @@ function dev_UpdateSummary(name,word) {
     '#selCase',
     '#selMood',
     '#selGender',
-    '#selTense');
+    '#selTense',
+    '#selTranslat',
+    '#selTranslit',
+    '#selDictForm');
     //Add a method to Word to check for a match in a supplied array
     for (var i=0;i<x.length;i++){
         outS[i]=[$(x[i]).attr("name"),$(x[i]).val()]

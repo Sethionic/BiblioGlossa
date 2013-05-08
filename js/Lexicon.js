@@ -105,6 +105,10 @@ Word.prototype.matchAttr = function (a,b) {
 //console.log("matchAttr(["+a+"],["+b+"])");
 if (a==null){return false;}
 if ((this.A_Get(b)=="")||(b=="")||(this.A_Get(b)==null)||(this.A_Get(b)=="None")) {return true;} //If there is no attribute to compare a to, return true
+if ((b=="DictForm")||(b=="Translation")||(b=="Transliteration")){//Regex Filters
+reggy=new RegExp(a,"im");
+return reggy.test(this.A_Get(b))
+}
 for (var i=0;i<a.length;i++) {
 if (a[i]==this.A_Get(b)) {return true;} //b is a member of a, so return true
 }
@@ -1340,6 +1344,7 @@ function filter_create_deck(name,params) {
         WL.next()
         setStats(numFound+"/"+WL.length());
         show('wordlist-form')
+        show('options-container')
     }
 }
 

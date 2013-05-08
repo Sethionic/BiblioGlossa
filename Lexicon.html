@@ -109,11 +109,23 @@
             <label for="selTense" >Tense:</label>
             <select multiple id='selTense' name='Tense' form='FiltersForm'></select>
             </div>            
-            <div id="options-container" form ='FiltersForm'>
+            <div class='Word_Filter'>
+            <label for="selDictForm" >Dictionary Form:</label>
+            <input id='selDictForm' name='DictForm' form='FiltersForm'></select>
+            </div>            
+            <div class='Word_Filter'>
+            <label for="selTranslit" >Transliteration:</label>
+            <input id='selTranslit' name='Transliteration' form='FiltersForm'></select>
+            </div>            
+            <div class='Word_Filter'>
+            <label for="selTranslat" >Translation:</label>
+            <input id='selTranslat' name='Translation' form='FiltersForm'></select>
+            </div>            
+            <div id="options-container" form ='FiltersForm' style="float:left;display:none">
                 <div id="button-shuffle" title="shuffle" class="button" onclick="shuffle()"></div>
                 <div id="options">
                     <div id="stats">0 / 0</div>
-                    <div id="button-options" class="button" onclick="options()">options</div>
+                    <div id="button-options" class="button" onclick="options()" style="display:none">options</div>
                 </div>
             </div>
             <script type="text/javascript">
