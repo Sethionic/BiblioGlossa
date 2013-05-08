@@ -440,7 +440,7 @@ WordListMGR.prototype.wordlist_add = function (key) {
 
 //delete active wordlist and and words in it
 WordListMGR.prototype.wordlist_delete = function () {
-    this.active().deleteAllWords();
+    //this.active().deleteAllWords();//Removed since words are static
     //rm wordlist
     localStorage.removeItem(this.active().key);
     this.wordlists.splice(this.index,1);
@@ -1296,6 +1296,22 @@ function testInit_dev() {
 }
 
 function create_or_replace(name){
+    console.log("create_or_replace("+name+")");
+    if ((name=="")||(name=="default")){
+    console.log("Invalid WordList name: "+name);
+    return;
+    }
+    var d;
+    for (var i=0;i<WORDLISTMGR.length();i++){ //Could be potentially faster searching backwards
+        d = WORDLISTMGR.wordlist_at_index(i);
+        if (d.name==name){
+        WORDLISTMGR.wordlist_load(i);
+        WORDLISTMGR.wordlist_delete();
+        break;
+        }
+    }
+    return WORDLISTMGR.createWordList(name);
+    
     //See if name exists
         //If so, wipe it
         //If not, create it
@@ -1304,18 +1320,22 @@ function create_or_replace(name){
 var outMode=wordbox;
 function filter_create_deck(name,params) {
     $('#FilterOutput').empty()
-    var WL=WORDLISTMGR.wordlist_at_index(0)
+    var WL=WORDLISTMGR.wordlist_at_index(0) //WL is the main wordlist
+    var TempIndex=create_or_replace(name);
+    var TempWL=WORDLISTMGR.wordlist_at_index(TempIndex);
     var numFound=0
     for (var i=0;i<WL.length();i++){
         //If conditions
-        word=WORDLISTMGR.active().current()//.wordlist_at_index(0)//active().current()
+        word=WL.current()//WORDLISTMGR.active().current()//.wordlist_at_index(0)//active().current()
         if (word.match(params)){
+        TempWL.add(word);TempWL.save();
         html2add=outMode(word);
         $('#FilterOutput').append(html2add);
         numFound++;
         }
-        next()
+        WL.next()
         setStats(numFound+"/"+WL.length());
+        show('wordlist-form')
     }
 }
 
@@ -1395,7 +1415,25 @@ function mainRunner(){
 }
 
 function filter_to_WL(){
-console.log("filter_to_WL()")
+    var newName=document.getElementById('wordlist-form-value').value
+    var name="LexiconSearch"
+    console.log("filter_to_WL()");
+    //Change WL created by filter button to new WL and prompt name
+    var d;
+    for (var i=0;i<WORDLISTMGR.length();i++){ //Could be potentially faster searching backwards
+        d = WORDLISTMGR.wordlist_at_index(i);
+        if (d.name==newName){
+        console.log("Name \""+newName+"\" taken");
+        return;
+        }
+        if (d.name==name){
+        WORDLISTMGR.wordlist_load(i);
+        d.name=newName;
+        d.save()
+        break;
+        }
+    }
+    
 }
 
 /*

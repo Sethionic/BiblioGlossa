@@ -56,9 +56,21 @@
 
             <form id='FiltersForm' action="" onSubmit="">
             <button form='FiltersForm' type="button" onclick="filter_create_deck('LexiconSearch',dev_UpdateSummary())">Filter</button>
-            <button id='makeWLB' form='FiltersForm' type="button" onclick="filter_to_WL">Create wordlist</button>
+            </form>
+            <button id='makeWLB' form='FiltersForm' type="button" onclick="filter_to_WL()" style="display:none">Create wordlist</button>
+            <div id="wordlist-form" style="display:none">
+                                <form action="" onsubmit="return false;">
+                                    <input id="wordlist-key" type="hidden" value="" />
+                                    <label for="wordlist-form-value" >Create new wordlist from results?:</label>
+                                    <input id="wordlist-form-value" type="text" maxlength="16" value="" />
+                                    <button type="submit" onclick="filter_to_WL()">save</button>
+                                    <div id="wordlist-form-options" style="display:none">
+                                        <div class="button" onclick="saveWordList()">save</div>
+                                        <div class="button" onclick="saveWordListCancel()">cancel</div>
+                                    </div>
             <output type="text" id='devOut'></output>
             </form>
+            </div>
             
             <div id="msg-container" style="display:none">
                 <span id="msg" onclick="msgClose()"></span>
