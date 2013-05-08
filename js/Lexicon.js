@@ -4,7 +4,7 @@
  * Derived from Flashcards
  * Renamed Classes: Card -> Word,Deck -> WordList
 \*----------------------------------------------------------------*/
-var lexDebug=1
+var lexDebug=0
 var LexMode=1
 
 /*----------------------------Word.js-----------------------------*/
@@ -442,6 +442,7 @@ WordListMGR.prototype.wordlist_add = function (key) {
 WordListMGR.prototype.wordlist_delete = function () {
     //this.active().deleteAllWords();//Removed since words are static
     //rm wordlist
+    if (this.active.name=="default"){return}//Safegaurd to keep main WordList alive
     localStorage.removeItem(this.active().key);
     this.wordlists.splice(this.index,1);
     this.wordlist_load(0);
@@ -601,6 +602,7 @@ function initLexicon(file) {
 			*/
 			
 		}
+		makeChapterLists()
 	});
 	
 	reader.onerror = function(){ alert('Unable to read ' + file.fileName);};
@@ -1418,22 +1420,34 @@ function filter_to_WL(){
     var newName=document.getElementById('wordlist-form-value').value
     var name="LexiconSearch"
     console.log("filter_to_WL()");
+    $('#devOut').empty() //Clear messages
     //Change WL created by filter button to new WL and prompt name
     var d;
     for (var i=0;i<WORDLISTMGR.length();i++){ //Could be potentially faster searching backwards
         d = WORDLISTMGR.wordlist_at_index(i);
         if (d.name==newName){
         console.log("Name \""+newName+"\" taken");
+        $('#devOut').append('<span style="font-color=ff0000">Name Taken</span>')
         return;
         }
         if (d.name==name){
         WORDLISTMGR.wordlist_load(i);
         d.name=newName;
         d.save()
+        hide('wordlist-form')
         break;
         }
     }
     
+}
+
+function makeChapterLists(){
+    //Make a Wordlist for each chapter
+    outMode=function(){return}
+    for (var i=1;i<A_Chapter.length;i++){
+    filter_create_deck(A_Chapter[i].text,[["Chapter",[A_Chapter[i].value]]])
+    }
+    outMode=wordbox
 }
 
 /*
