@@ -583,7 +583,7 @@ function initLexicon(file) {
                 'Voice':data[row][17],
                 'Mood':data[row][18]
 			});
-			if (row>0){//Skip header row
+			if (data[row][2]!="DictForm"){//Skip header row
 			word.save();
 			WORDLISTMGR.active().add(word);
 			WORDLISTMGR.active().save();}
