@@ -139,20 +139,22 @@
             <span id="version">0.7.2</span>
         </div>
         
-        <script src="js/modernizr.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/vendor/jquery-1.8.3/jquery-1.8.3.js"></script>
+        <script src="js/vendor/uicore.js"></script>
+        <script src="js/jquery.json-2.4.js"></script>
+        <script src="js/Available.js"></script>
+        <script src="js/ui.dropdownchecklist-1.4-min.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/Lexicon.js"></script>
+
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
         <script src="js/BlobBuilder.min.js"></script>
         <script src="js/FileSaver.min.js"></script>
-        <!--<script src="word.js" type="text/javascript" charset="utf-8"></script>
-        <script src="wordlist.js" type="text/javascript" charset="utf-8"></script>
-        <script src="wordlistmgr.js" type="text/javascript" charset="utf-8"></script>
-        <script src="controller.js" type="text/javascript" charset="utf-8"></script>
-        --!>
+        <script src="js/jquery.csv-0.71.js"></script>
         <script src="js/Lexicon.js"></script>
-        
         <script type="text/javascript" charset="utf-8">
-            LexMode=2;
+            $(document).ready(function(){LexMode=2;
             init();
             //Capture key events
             document.onkeydown = checkHotkey;
@@ -170,8 +172,17 @@
           setInterval(updateLayout, 750);
           
           //Initialize first card
+          var animtemp=WORDLISTMGR.mode_animations
+          WORDLISTMGR.mode_animations=false;
           WORDLISTMGR.active().next();
-          //prev();
+          prev();
+          //next();
+          WORDLISTMGR.mode_animations=animtemp;
+          document.onkeydown = checkHotkey;
+          document.getElementById('main').innerHTML = "Καλώς Ορίσατε";
+          document.getElementById('main-alt').innerHTML = "Welcome";
+          });
         </script>
+        
     </body>
 </html>

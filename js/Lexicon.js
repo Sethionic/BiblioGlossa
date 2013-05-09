@@ -6,6 +6,7 @@
 \*----------------------------------------------------------------*/
 var lexDebug=0
 var LexMode=1
+var CSVLoaded=0
 
 /*----------------------------Word.js-----------------------------*/
 function Word(opts) {
@@ -881,7 +882,7 @@ function init() {
         WORDLISTMGR.wordlist_load(ndx);
     }
   }
-  updateDisplay();
+  //updateDisplay();
 }
 
 //return false if id is display:none
@@ -1215,12 +1216,14 @@ if (LexMode==2){
     flipReset();
     hide('conf');
     var word = WORDLISTMGR.active().current();
-    if (!word) {
+    if ((!word)&&(CSVLoaded==0)) {
         // set help text for first run.
         //navHide();
         //hide edit/del options when there are 0 words
         //setMsg('no words in this wordlist, click here to add', function () {add();});
+        console.log("initLexicon('data/Lexicon.csv')");
         initLexicon('data/Lexicon.csv')
+        CSVLoaded=1
         //optionHide();
         //document.getElementById('main').innerHTML = 'Click here to toggle';
         //document.getElementById('main-alt').innerHTML = 'Now add some';
@@ -1269,6 +1272,7 @@ else{
         //setMsg('no words in this wordlist, click here to add', function () {add();});
         if (lexDebug){console.log( 'Click here to toggle'+'Now add some' );}
         setStats('0 words');
+        console.log("initLexicon('data/Lexicon.csv')");
         initLexicon('data/Lexicon.csv')
     } else {
         console.log(word.Key+': '+word.DictForm);
@@ -1298,6 +1302,7 @@ function updateOptions() {
 function testInit_dev() { 
     var localStorage = new Object();
     WORDLISTMGR = new WordListMGR('wordlistmgr');
+    console.log("initLexicon('data/Lexicon.csv')");
     initLexicon("data/Lexicon.csv")
     for (var i;i<40;i++){
     updateConsole_dev();next()
