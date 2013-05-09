@@ -1,16 +1,16 @@
 CACHE MANIFEST
-# rev 0.7.2
+# rev 0.0.1
 
-#Just added these.
 data/Lexicon.csv
-js/vendor/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js 
-/css/stylesheet.css
-js/add_greek.js
+css/stylesheet.css
+css/jquery-ui-1.8.13.custom.css
+css/LexWordBox.css
 js/jquery.csv-0.71.js  
 js/jquery.json-2.4.js  
-js/test.js  
-js/indbtest.js 
 js/vendor/jquery-1.8.3/jquery-1.8.3.js  
+js/vendor/uicore.js
+js/ui.dropdownchecklist-1.4-min.js
+
 img/bg_hr.png 
 css/pygment_trac.css  
 

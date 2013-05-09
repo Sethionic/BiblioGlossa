@@ -1343,10 +1343,10 @@ function filter_create_deck(name,params) {
         numFound++;
         }
         WL.next()
-        setStats(numFound+"/"+WL.length());
-        show('wordlist-form')
-        show('options-container')
     }
+    setStats(numFound+"/"+WL.length());
+    show('wordlist-form')
+    show('options-container')
 }
 
 function RD(key,dict) { //Reverse Dictionary
