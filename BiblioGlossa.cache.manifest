@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# rev 0.0.2
+# rev 0.0.3
 
 index.html
 flashcard.html
@@ -51,4 +51,4 @@ js/ui.dropdownchecklist-1.4-min.js
 js/vendor/jquery-1.8.3/jquery-1.8.3.js  
 js/vendor/uicore.js
 
-# last modified: Wed May  8 23:07:57 EDT 2013
+# last modified: Tue May 14 17:03:35 EDT 2013
